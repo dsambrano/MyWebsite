@@ -1,0 +1,81 @@
+<script>
+html,
+body {
+	margin: 0;
+    overflow: hidden;
+    height: 100%;
+}
+
+.container {
+	width: 820px;
+	margin: auto auto;
+	font-family: sans-serif;
+}
+
+p {
+	align: left;
+	font-size: 1.1em;
+}
+
+#note {
+	align: left;
+	font-size: 80%;
+	font-style: italic;
+	margin-bottom: 100px;
+	margin-top: 30px;
+}
+
+/* Buttons */
+button {
+  height: 50px;
+  font-size: 12pt;
+  width: 200px;
+  display: block;
+  margin: 20px auto 20px auto;
+  padding: 0 20px;
+  background-color: #BFF58F;
+  border-radius: 5px;
+  border: none; 
+}
+
+.choice_button {
+  height: 50px;
+  font-size: 12pt;
+  width: 100px;
+  display: inline;
+  margin: 20px auto 20px auto;
+  padding: 0 20px;
+  background-color: #1ad1ff;
+  border-radius: 5px;
+  border: none; 
+  width:100px;
+}
+
+.left {
+	display: inline-block;
+	float: left;
+}
+
+.right {
+	display: inline-block;
+	float: right;
+}
+
+.arrow {
+  font-size: 40px;
+}
+
+.response, .warning, .parameters {
+	display: none;
+}
+
+/* Scale canvas with resize attribute to full size */
+canvas[resize] {
+    width: 100%;
+    height: 100%;
+}
+
+#myCanvas{
+	display: inline;
+}
+</script>
