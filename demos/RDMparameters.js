@@ -2,7 +2,7 @@
 // to be displayed for the task
 var count = 150;
 //Sets the size, in pixels, that you want the dots to be
-var size = 1;     
+var size = 1.5;     
 //var RL = -1; //-1 for left; 1 for right
 var RL = 1;
 //var coherence = .5; //percent of dots moving in same direction
