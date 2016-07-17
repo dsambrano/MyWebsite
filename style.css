@@ -202,6 +202,7 @@ span.mainResearch {
     float: left;
     line-height: 1.3;
     display: inline-block;
+    position: absolute;
 }
 
 .intextCite {
@@ -235,18 +236,18 @@ h1.research {
 
 #ReseachFigure {
     display: inline-block;
-    width: 200px;
-    height: 325px;
+    width: 180px;
+    height: 290px;
+    float: right;
+    margin: 45px 28px 25px 35px;
 }
  
 #figure {
-    position: relative;
-    top: 50%;
-    transform: translateY(13.5%);
+    margin-bottom: 0px;
 }
   
 #cite {
-    margin-top: 35px;
+    margin-top: -5px;
     font-size: 50%;
     font-weight: bold;
 }
