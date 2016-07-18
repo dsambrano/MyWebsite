@@ -436,10 +436,21 @@ choice_screen: function() {
     console.log(paper.project.layers);
   }
 
+    var mouseData = [];
+    var coor = [];
 
   $(document).on('click', '#ready', function RDM() {
     startTime = (new Date()).getTime();
   //$(document).keydown(function RDM() {
+    console.log(onmousemove);
+    $("#choice_screen").mousemove( function mouse(){
+          var x = event.pageX;
+          var y = event.pageY;
+          coor = "Coordinates: (" + x + "," + y + ")";
+          mouseData.push(coor);
+          console.log(coor);
+    });
+    console.log(mouseData);
     $("#ready").hide();
     $(".warningReady").hide();
     //creates the canvas and activates the scope to start drawing
@@ -551,9 +562,7 @@ choice_screen: function() {
       $(".warningReady").show();
     } else {
 
-      console.log("LAYER");
 
-      console.log(paper.project.layers);
       paper.project.remove();
 
       even = 0;
@@ -706,7 +715,7 @@ phase2_predict: function(){
     if (coherence == 0) {outcome = 0} else {if (RL == -1) {outcome = 7} else {outcome = 0}};
     //if (cat < 6) {outcome = 7} else if (cat == 6) {outcome = 0} else {outcome = -7};
     var predict_text = "Left";
-  } else if (choice_p == 2){
+  } else if (choice_p == 1){
     if (coherence == 0) {outcome = 0} else {if (RL == 1) {outcome = 7} else {outcome = 0}};
     var predict_text = "Right";
   };
@@ -730,7 +739,7 @@ phase2_predict: function(){
         trial_num: experiment.trial_num, 
         direction: RL,
         coherence: coherence,
-        keypress_c: [],
+        //keypress_c: [],
         choice_c: [],
         outcome_c: [],
         rt_c: [],
@@ -791,9 +800,9 @@ choice_screen_p2: function(data,RL,coherence){
         var j = 0;      
      
     paper.setup('Motive');
-    paper.project.activate('Motive');
-    console.log("paper Set up MOTIVE!");
-    console.log(paper.setup('Motive'));
+    //paper.project.activate('Motive');
+    //console.log("paper Set up MOTIVE!");
+    //console.log(paper.setup('Motive'));
     //console.log("paper Set up NONMOTIVE!");
     //console.log(paper.setup('nonMotive'));    //}
     //paper.project.clear();
@@ -867,11 +876,10 @@ choice_screen_p2: function(data,RL,coherence){
       paper.project.remove();
  
       even = 0;
- 
-      if (experiment.keypos == "1") {
-        choice = 1;
-        if (RL == 1) {outcome = 3} else {outcome = 0}
-      } //else {}
+        
+        var choice = 1;
+        if (coherence == 0) {outcome = 0} else {if (RL == 1) {outcome = 3} else {outcome = 0}};
+       //else {}
  
  
       experiment.tally_c = experiment.tally_c + outcome;
@@ -883,6 +891,7 @@ choice_screen_p2: function(data,RL,coherence){
       data.rt_c = endTime - startTime;
       data.tally_c = experiment.tally_c;
  
+      console.log("DATA")
       console.log(data);
       experiment.dataPhase2.push(data);
  
@@ -900,10 +909,8 @@ choice_screen_p2: function(data,RL,coherence){
  
       even = 0;
  
-      if (experiment.keypos == "1") {
-        choice = 1;
-        if (RL == 1) {outcome = 3} else {outcome = 0}
-      } //else {}
+        var choice = -1;
+        if (coherence == 0) {outcome = 0} else {if (RL == -1) {outcome = 3} else {outcome = 0}};
  
  
       experiment.tally_c = experiment.tally_c + outcome;
@@ -915,6 +922,7 @@ choice_screen_p2: function(data,RL,coherence){
       data.rt_c = endTime - startTime;
       data.tally_c = experiment.tally_c;
  
+      console.log("DATA")
       console.log(data);
       experiment.dataPhase2.push(data);
  

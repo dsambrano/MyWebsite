@@ -164,6 +164,17 @@ td {
     margin: 50px 50px;
     margin-left: 10px;
 }
+
+td a:visited { 
+    font-weight: regular; 
+    text-decoration: none; 
+    color: #5900b3;
+    }
+td a:hover, a:focus, a:active { 
+    text-decoration: none; 
+    cursor: pointer;
+    color: #bf83fb;
+    }
   
 /* Sub Menus */
 /*
@@ -255,6 +266,11 @@ h1.research {
     text-decoration: underline;
     color: #5900b3;
     font-weight: bold;
+}
+
+#cite a:hover, a:focus, a:active { 
+    cursor: pointer;
+    color: #bf83fb;
 }
 
 .blurb {
@@ -409,7 +425,7 @@ li a:visited {
     font-weight: regular;
     }
 li a:hover {
-    color: #8c1aff;
+    color: #bf83fb;
     font-weight: regular;
     }
 </style>
