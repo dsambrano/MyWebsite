@@ -120,14 +120,13 @@ header h1 {
   
 header {
     min-width: 770px;
-    width: 90%;
+    width: 100%;
     min-height: 157.5px; 
-    height: 22.5%;
+    height: 275px;
     max-height: 275px;
     display: block;
-    height: 275px;
-    background: url(R.png) no-repeat 100% 0%;
-    background-size: 90%;
+    background: url(R.png) no-repeat 50% 0%;
+    background-size: contain;
     background-color: #ffffff;
 }
   

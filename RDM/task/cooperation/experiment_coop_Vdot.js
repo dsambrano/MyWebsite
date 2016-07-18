@@ -442,7 +442,8 @@ choice_screen: function() {
   $(document).on('click', '#ready', function RDM() {
     startTime = (new Date()).getTime();
   //$(document).keydown(function RDM() {
-    console.log(onmousemove);
+    //console.log(onmousemove);
+    if (experiment.trial_num !=1){console.log(mouseData[mouseData.length -1]);}
     $("#choice_screen").mousemove( function mouse(){
           var x = event.pageX;
           var y = event.pageY;
@@ -450,7 +451,7 @@ choice_screen: function() {
           mouseData.push(coor);
           console.log(coor);
     });
-    console.log(mouseData);
+    
     $("#ready").hide();
     $(".warningReady").hide();
     //creates the canvas and activates the scope to start drawing
@@ -531,7 +532,7 @@ choice_screen: function() {
     if ($("#ready").is(':visible')) {
       $(".warningReady").show();
     } else {
-
+      $("#choice_screen").off("mousemove");
       paper.project.remove();
       even = 0;
 
@@ -562,7 +563,7 @@ choice_screen: function() {
       $(".warningReady").show();
     } else {
 
-
+      $("#choice_screen").off("mousemove");
       paper.project.remove();
 
       even = 0;
@@ -778,9 +779,22 @@ choice_screen_p2: function(data,RL,coherence){
     console.log(paper.project.layers);
   }
 
+  var coor = [];
+  var mouseData = [];
+
   $(document).on('click', '#ready_p2', function RDM() {
   //$(document).keydown(function RDM() {
     startTime = (new Date()).getTime();
+
+    $("#choice_screen_p2").mousemove( function mouse(){
+          var x = event.pageX;
+          var y = event.pageY;
+          coor = "Coordinates: (" + x + "," + y + ")";
+          mouseData.push(coor);
+          console.log(coor);
+    });
+    console.log(mouseData);    
+
     $("#ready_p2").hide();
     $(".warningReady").hide();
     console.log($("#ready_p2").is(':visible'));
@@ -872,7 +886,7 @@ choice_screen_p2: function(data,RL,coherence){
     } else {
      
      
- 
+      $("#choice_screen_p2").off("mousemove");
       paper.project.remove();
  
       even = 0;
@@ -904,7 +918,7 @@ choice_screen_p2: function(data,RL,coherence){
       $(".warningReady").show();
     } else {
 
-
+      $("#choice_screen_p2").off("mousemove");
       paper.project.remove();
  
       even = 0;
