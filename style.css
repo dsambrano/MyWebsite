@@ -89,7 +89,6 @@ a:visited {
     }
 a:hover, a:focus, a:active { 
     text-decoration: none; 
-    background-color: #b3b3b3;
     cursor: pointer;
     color: #bf83fb;
     }
@@ -406,7 +405,11 @@ li a:link {
     font-weight: regular;
     }
 li a:visited {
-    color: #bf83fb;
+    color: #5900b3;
+    font-weight: regular;
+    }
+li a:hover {
+    color: #8c1aff;
     font-weight: regular;
     }
 </style>
