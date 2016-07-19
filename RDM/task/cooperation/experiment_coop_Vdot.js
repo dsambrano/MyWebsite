@@ -258,7 +258,7 @@ description1: function() {
       var Prac_RL = shuffling([1,-1]).shift();
       console.log("PRACTICE DIRECTION")
       console.log(Prac_RL);
-      var Prac_coherence = .4; 
+      var Prac_coherence = .1; 
     //}
     //paper.project.clear();
  
