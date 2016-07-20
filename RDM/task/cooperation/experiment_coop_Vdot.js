@@ -255,10 +255,11 @@ description1: function() {
  
     paper.setup('PracticeTrial');
       
-      var Prac_RL = shuffling([1,-1]).shift();
+      var Prac_RL = 1;//shuffling([1,-1]).shift();
       console.log("PRACTICE DIRECTION")
       console.log(Prac_RL);
-      var Prac_coherence = .1; 
+      var Prac_coherence = .1;
+      console.log(Prac_coherence);
     //}
     //paper.project.clear();
  
@@ -278,21 +279,26 @@ description1: function() {
         var center = [view.size.width*Math.random(),view.size.height*Math.random()];
         symbol.place(center);
       }
+      var skips = 2;
+      if (Prac_coherence > .15) {skips = 2;} else {skips = 4;}
+        console.log(skips);
       //onFrame gets called 60 times per sec; creates the animation/motion
       view.onFrame = function(event) {
         even ++;
-        if(even%2 === 0){
+        if(even%skips === 0){
         // Loop to take each dot 1 at a time for the animation/motion
             for (var i = 0; i < full.length; i++) {
+              shuffling(full[i]);
+
               for (var j = 0; j < full[i].length; j++){
-                shuffling(full[i]);
+                //shuffling(full[i]);
                 var current = full[i][j];
                 var item = project.activeLayer.children[current];
                     //console.log(item);
                     //console.log([i,j]);
                     //console.log(current);
                 if (j < (count/3)*Prac_coherence) {
-                  item.position.x += (.5)*Prac_RL;
+                  item.position.x += (1.5)*Prac_RL;
                 } else {
                   //var center = [view.size.width*Math.random(),view.size.height*Math.random()];
                   //console.log(center);
@@ -443,14 +449,15 @@ choice_screen: function() {
     startTime = (new Date()).getTime();
   //$(document).keydown(function RDM() {
     //console.log(onmousemove);
-    if (experiment.trial_num !=1){console.log(mouseData[mouseData.length -1]);}
+    //if (experiment.trial_num !=1){console.log(mouseData[mouseData.length -1]);}
     $("#choice_screen").mousemove( function mouse(){
           var x = event.pageX;
           var y = event.pageY;
-          coor = "Coordinates: (" + x + "," + y + ")";
+          coor = [x, y];
           mouseData.push(coor);
-          console.log(coor);
+          //console.log(coor);
     });
+    console.log(mouseData);
     
     $("#ready").hide();
     $(".warningReady").hide();
@@ -498,6 +505,7 @@ choice_screen: function() {
         if(even%2 ===0){
         // Loop to take each dot 1 at a time for the animation/motion
             for (var i = 0; i < full.length; i++) {
+              //shuffling(full[i]);
               for (var j = 0; j < full[i].length; j++){
                 shuffling(full[i]);
                 var current = full[i][j];
@@ -713,11 +721,11 @@ phase2_predict: function(){
   //var predict_text = "TEST";
  
   if (choice_p == -1){
-    if (coherence == 0) {outcome = 0} else {if (RL == -1) {outcome = 7} else {outcome = 0}};
+    if (coherence == 0) {outcome = 0} else {if (RL == -1) {outcome = 7} else {outcome = -7}};
     //if (cat < 6) {outcome = 7} else if (cat == 6) {outcome = 0} else {outcome = -7};
     var predict_text = "Left";
   } else if (choice_p == 1){
-    if (coherence == 0) {outcome = 0} else {if (RL == 1) {outcome = 7} else {outcome = 0}};
+    if (coherence == 0) {outcome = 0} else {if (RL == 1) {outcome = 7} else {outcome = -7}};
     var predict_text = "Right";
   };
  
@@ -789,9 +797,9 @@ choice_screen_p2: function(data,RL,coherence){
     $("#choice_screen_p2").mousemove( function mouse(){
           var x = event.pageX;
           var y = event.pageY;
-          coor = "Coordinates: (" + x + "," + y + ")";
+          coor = [x, y];
           mouseData.push(coor);
-          console.log(coor);
+          //console.log(coor);
     });
     console.log(mouseData);    
 
