@@ -69,7 +69,19 @@ var forbiddenIds = ["A1TLNLB9D87H6","A3W6T1WDYXMR3","A5EU1AQJNC7F2","A2NAKIXS3DV
 "A142ZRU284W9O","A2U77P7ML4ZXDB","A1YC558J4E5KZ","A15K0L6NGQXOM0","A1SUU1QIRDZXJC",
 "ANK8K5WTHJ61C","A1FGN2JF4LCF9B","A1ZDUMHAM754IJ","A3PPRVK6XK6GP5","A2U2HC38IZKZFC",
 "A2G2SLPT39TUKP","A3D3NEQ158WUB0","A1JNC3HWWHJD2J","A35NZAXRVLAC0G","AW34JRQ2PDQAV",
-"A3MTAJHYHCIJK4","A271BMHV42XZPU","AZSAF65XFKDK7","A28JIPBK8BEKHS","A3AE627X3R2JQI"];
+"A3MTAJHYHCIJK4","A271BMHV42XZPU","AZSAF65XFKDK7","A28JIPBK8BEKHS","A3AE627X3R2JQI", 
+"A2BNWPI0NDI7K7","A1BWS5AD2T4NIR","A2O31IKB0RQXPE","AM8OWAW9TUVLN","AFXEBGX1I0ZR3",
+"A28RX7L0QZ993M","A1NXHA2741IJEA","A1VZSFHTU51JP0","A3CZFTXS9EQSY3","A1GABEPSX2V15F",
+"A2S4YDJ9UGAXFQ","A1OZPLHNIU1519","A2KVYRNL2CK95F","A2PXJTMWGUE5DC","A4ZW4GNQ98HV6",
+"A2EEL9YYUHL5SK","A1ETJBNTO9ZWZ8","A2AO7QP5THYKQF","A1SZZ9S12FYSJ6","A2UFF813T770QO",
+"A1GLF2427E02YG","A2179VLITZ8QHP","A18LPAFMK1B06K","A1WA3VMWGQJPYS","AMSWIR4J9XEIJ",
+"A3B7TNVOISSZ2O","ARVXIBUCA8WDZ","A23DPGTXU8VUG2","A1YGSYTOGXCQY7","A19TL7AJ0FB1JG",
+"AN1ED5ZT6CNCV","A1HWTTN3JEUNZY","A3U7TRQS729GNW","A3672FHRNOYTSS","AO63KMU3PGNJA",
+"A3ITZNJQUTIZ4C","AR7JOMZGYKZV","A1HK7CR71C8BCA","A119VUU21K6BNL","A217W59SA6LZSR",
+"AQA9YD7DDXWYN","A20RDGU2OCZYH4","AL0IT4RSPIWGK","A2OFN0A5CPLH57","A2K9BO7DWZLNMA",
+"A2P76QVLSGJR45","A1HU67YR5SX857","ADMTRXEG43HU0","A2BWTQWFM1J2IN","A1CSDIX05PK9V",
+"A3QJJR5Y3XE92N","A2WX9BYW5TI8OA","A2HSCKH5NKN5LP","A2RVEG53L48BAE","A1HWI4N1RJGKYY",
+"AZ9BZONG644TU","A2EL925FBG1SDA","A1XH5D33FMW08G","A18U96VTGHOXKM","AQVXVMX61864S"];
 
 // Block turkers who have done a version of this experiment before
 if (_(forbiddenIds).contains(turk.workerId)) {
@@ -89,29 +101,30 @@ function gen_order() {
 //  [11, 1], [11, 2], [11, 3], [11, 4]];
 
 
-  all_stim = [[1, .5, 0], [1, .5, 0], [1, .5, 0], [1, .5, 0],
-  [1, .3, 1], [1, .3, 1], [1, .3, 1], [1, .3, 1], [1, .3, 1], [1, .3, 1],
-  [1, .2, 2], [1, .2, 2], [1, .2, 2], [1, .2, 2], [1, .2, 2], [1, .2, 2],[1, .2, 2],[1, .2, 2],
-  [1, .1, 3], [1, .1, 3], [1, .1, 3], [1, .1, 3], [1, .1, 3], [1, .1, 3],[1, .1, 3],[1, .1, 3],[1, .1, 3],[1, .1, 3],[1, .1, 3],[1, .1, 3],[1, .1, 3],[1, .1, 3],
-  [1, 0, 4], [-1, 0, 5], [1, 0, 4], [-1, 0, 5], [1, 0, 4], [-1, 0, 5],[1, 0, 4],[-1, 0, 5],[1, 0, 4],[-1, 0, 5],[1, 0, 4],[-1, 0, 5],[1, 0, 4],[-1, 0, 5],[1, 0, 4],[-1, 0, 5],
-  [-1, .1, 6], [-1, .1, 6], [-1, .1, 6], [-1, .1, 6], [-1, .1, 6], [-1, .1, 6],[-1, .1, 6],[-1, .1, 6],[-1, .1, 6],[-1, .1, 6],[-1, .1, 6],[-1, .1, 6],[-1, .1, 6],[-1, .1, 6],
-  [-1, .2, 7], [-1, .2, 7], [-1, .2, 7], [-1, .2, 7], [-1, .2, 7], [-1, .2, 7],[-1, .2, 7],[-1, .2, 7],
-  [-1, .3, 8], [-1, .3, 8], [-1, .3, 8], [-1, .3, 8], [-1, .3, 8], [-1, .3, 8],
-  [-1, .5, 9], [-1, .5, 9], [-1, .5, 9], [-1, .5, 9]];
+  all_stim = [[1, .8, 0], [1, .8, 0],
+  [1, .3, 1], [1, .3, 1], [1, .3, 1],
+  [1, .25, 2], [1, .25, 2], [1, .25, 2], [1, .25, 2], [1, .25, 2],
+  [1, .15, 3], [1, .15, 3], [1, .15, 3], [1, .15, 3], [1, .15, 3],
+  [1, 0, 4], [1, 0, 4], [1, 0, 4], [1, 0, 4], [1, 0, 4],
+  [-1, 0, 5],[-1, 0, 5],[-1, 0, 5],[-1, 0, 5],[-1, 0, 5],
+  [-1, .15, 6], [-1, .15, 6], [-1, .15, 6], [-1, .15, 6], [-1, .15, 6],
+  [-1, .25, 7], [-1, .25, 7], [-1, .25, 7], [-1, .25, 7], [-1, .25, 7],
+  [-1, .3, 8], [-1, .3, 8], [-1, .3, 8],
+  [-1, .8, 9], [-1, .8, 9]];
   return all_stim.shuffle();
 }
 
 function gen_predictions(){
-  predictions = [[1,1,-1,-1].shuffle(),
-  [1,1,1,-1,-1,-1].shuffle(),
-  [1,1,1,1,-1,-1,-1,-1].shuffle(),
-  [1,1,1,1,1,1,1,-1,-1,-1,-1,-1,-1,-1].shuffle(),
-  [1,1,1,1,-1,-1,-1,-1].shuffle(),
-  [1,1,1,1,-1,-1,-1,-1].shuffle(),
-  [1,1,1,1,1,1,1,-1,-1,-1,-1,-1,-1,-1].shuffle(),
-  [1,1,1,1,-1,-1,-1,-1].shuffle(),
-  [1,1,1,-1,-1,-1].shuffle(),
-  [1,1,-1,-1].shuffle()]
+  predictions = [[1,1,-1,-1].shuffle(), //.8 Right 4
+  [1,1,1,-1,-1,-1].shuffle(), //.3 Right 6
+  [1,1,1,1,1,-1,-1,-1,-1,-1].shuffle(), //.25 Right 10
+  [1,1,1,1,1,-1,-1,-1,-1,-1].shuffle(), //.15 Right 10
+  [1,1,1,1,1,-1,-1,-1,-1,-1].shuffle(), //0 Right 10
+  [1,1,1,1,1,-1,-1,-1,-1,-1].shuffle(), //0 Right 10
+  [1,1,1,1,1,-1,-1,-1,-1,-1].shuffle(), //.15 Right 10
+  [1,1,1,1,1,-1,-1,-1,-1,-1].shuffle(), //.25 Right 10
+  [1,1,1,-1,-1,-1].shuffle(), //.3 Right 6
+  [1,1,-1,-1].shuffle()] //.8 Right 4
 
   return predictions;
 }

@@ -8,14 +8,13 @@ var stim_set = random(1,10)
  
 cc = 0;
 all_stim = gen_order();
-//var images = new Array();
+var images = new Array();
 var count = 150;
 var speed = 2;
 var RL = [];
 var coherence = [];
 var size = 1.5;
 var even = 0;
-var tempdata = [];
  
 //This was loading all images before
 //for (i = 0; i < all_stim.length; i++) {
@@ -30,7 +29,7 @@ showSlide("instructions");
 var experiment = {
   nTrials: 80,
   keypos: _.sample(["1","2"]),
-  //stim_set: stim_set,
+  stim_set: stim_set,
   trial_num: 0,
   order: gen_order(),
   predict_order: gen_predictions(),
@@ -74,12 +73,18 @@ descriptionLeft: function() {
         paper.install(window);
         //console.log(nums);
         shuffling(nums);
-
+        //console.log(nums);
+        //console.log(nums);
  
         var First = nums.slice(0, 50);
         var Second = nums.slice(50, 100);
         var Third = nums.slice(100, 151);
-
+        //console.log(First);
+        //console.log(Second);
+        //console.log(Third);
+        //console.log(First);
+        //console.log(Second);
+        //console.log(Third);
         var full = [First,Second,Third];
         //console.log(full);
         var i = 0;
@@ -88,7 +93,7 @@ descriptionLeft: function() {
     paper.setup('InstructLeft');
       
       var Prac_RL = -1;
-      var Prac_coherence = .6; 
+      var Prac_coherence = .5; 
     //}
     //paper.project.clear();
  
@@ -111,7 +116,7 @@ descriptionLeft: function() {
       //onFrame gets called 60 times per sec; creates the animation/motion
       view.onFrame = function(event) {
         even ++;
-        if(even%1 === 0){
+        if(even%2 === 0){
         // Loop to take each dot 1 at a time for the animation/motion
             for (var i = 0; i < full.length; i++) {
               for (var j = 0; j < full[i].length; j++){
@@ -137,6 +142,12 @@ descriptionLeft: function() {
                     if (item.bounds.right < 0) {
                         item.position.x = +view.size.width;
                     }
+                    //if (item.bounds.bottom < 0) {
+                    //    item.position.y = +view.size.height;
+                    //}
+                    //if (item.bounds.top > view.size.height) {
+                    //    item.position.y = -item.bounds.height;
+                    //}
               }
             }
         }
@@ -165,7 +176,12 @@ descriptionRight: function() {
         var First = nums.slice(0, 50);
         var Second = nums.slice(50, 100);
         var Third = nums.slice(100, 151);
-
+        //console.log(First);
+        //console.log(Second);
+        //console.log(Third);
+        //console.log(First);
+        //console.log(Second);
+        //console.log(Third);
         var full = [First,Second,Third];
         //console.log(full);
         var i = 0;
@@ -197,14 +213,16 @@ descriptionRight: function() {
       //onFrame gets called 60 times per sec; creates the animation/motion
       view.onFrame = function(event) {
         even ++;
-        if(even%1 === 0){
+        if(even%2 === 0){
         // Loop to take each dot 1 at a time for the animation/motion
             for (var i = 0; i < full.length; i++) {
               for (var j = 0; j < full[i].length; j++){
                 shuffling(full[i]);
                 var current = full[i][j];
                 var item = project.activeLayer.children[current];
- 
+                    //console.log(item);
+                    //console.log([i,j]);
+                    //console.log(current);
                 if (j < (count/3)*Prac_coherence) {
                   item.position.x += (.5)*Prac_RL;
                 } else {
@@ -221,6 +239,12 @@ descriptionRight: function() {
                     if (item.bounds.right < 0) {
                         item.position.x = +view.size.width;
                     }
+                    //if (item.bounds.bottom < 0) {
+                    //    item.position.y = +view.size.height;
+                    //}
+                    //if (item.bounds.top > view.size.height) {
+                    //    item.position.y = -item.bounds.height;
+                    //}
               }
             }
         }
@@ -233,22 +257,41 @@ description1: function() {
   showSlide("description1");
    paper.install(window);
  
-
+   //var FirstLayer = paper.project.activeLayer;
+  //}
+  //paper.project.activeLayer.removeChildren();
+ 
+  //var count = 150;
+  //var coherence = .5;
+  //var RL = 1;
+  //var speed = 5;
+  //window.onload = function RDM() {
   $(document).on('click', '#PractButton', function RDM() {
   //$(document).keydown(function RDM() {
     $("#PractButton").hide();
     $(".FirstInstructions").hide();
-
+    //$(".warningReady").hide();
+    //console.log($("#ready").is(':visible'));
+    //creates the canvas and activates the scope to start drawing
+    //if (experiment.tally_c == 0) {
         var nums = [];
         for (var i = 0; i < count; i++) {
            nums.push(i);
         }
         //console.log(nums);
         shuffling(nums);
+        //console.log(nums);
+        //console.log(nums);
  
         var First = nums.slice(0, 50);
         var Second = nums.slice(50, 100);
         var Third = nums.slice(100, 151);
+        //console.log(First);
+        //console.log(Second);
+        //console.log(Third);
+        //console.log(First);
+        //console.log(Second);
+        //console.log(Third);
         var full = [First,Second,Third];
         //console.log(full);
         var i = 0;
@@ -256,11 +299,9 @@ description1: function() {
  
     paper.setup('PracticeTrial');
       
-      var Prac_RL = 1;//shuffling([1,-1]).shift();
-      console.log("PRACTICE DIRECTION")
+      var Prac_RL = shuffling([1,-1]).shift();
       console.log(Prac_RL);
-      var Prac_coherence = .5;
-      console.log(Prac_coherence);
+      var Prac_coherence = .4; 
     //}
     //paper.project.clear();
  
@@ -280,18 +321,12 @@ description1: function() {
         var center = [view.size.width*Math.random(),view.size.height*Math.random()];
         symbol.place(center);
       }
-      var skips = 2;
-      var move = .5;
-      if (coherence > .5) {skips = 1; move = .5;} else { if(coherence > .2) {skips = 2; move = 1.0;} else{if(coherence > .19) {skips = 3; move=1.5;}}};
-        console.log(skips);
       //onFrame gets called 60 times per sec; creates the animation/motion
       view.onFrame = function(event) {
         even ++;
-        if(even%skips === 0){
+        if(even%2 === 0){
         // Loop to take each dot 1 at a time for the animation/motion
             for (var i = 0; i < full.length; i++) {
-              //shuffling(full[i]);
-
               for (var j = 0; j < full[i].length; j++){
                 shuffling(full[i]);
                 var current = full[i][j];
@@ -300,7 +335,7 @@ description1: function() {
                     //console.log([i,j]);
                     //console.log(current);
                 if (j < (count/3)*Prac_coherence) {
-                  item.position.x += (move)*Prac_RL;
+                  item.position.x += (.5)*Prac_RL;
                 } else {
                   //var center = [view.size.width*Math.random(),view.size.height*Math.random()];
                   //console.log(center);
@@ -315,6 +350,12 @@ description1: function() {
                     if (item.bounds.right < 0) {
                         item.position.x = +view.size.width;
                     }
+                    //if (item.bounds.bottom < 0) {
+                    //    item.position.y = +view.size.height;
+                    //}
+                    //if (item.bounds.top > view.size.height) {
+                    //    item.position.y = -item.bounds.height;
+                    //}
               }
             }
         }
@@ -326,9 +367,12 @@ description1: function() {
     if ($("#ready").is(':visible')) {
       $(".warningReady").show();
     } else {
+//  $(document).keydown(function(event) {
+//    var keyCode = event.which;
 
       paper.project.remove();
-
+      //even = 0;
+      //console.log(paper.project);
     setTimeout(function(){showSlide("description2")},experiment.OutcomeTime);
   }});
  
@@ -336,7 +380,15 @@ description1: function() {
     if ($("#ready").is(':visible')) {
       $(".warningReady").show();
     } else {
-
+//  else if (keyCode == 77){
+//    var keypress = "right";
+//    $(document).unbind("keydown");
+    //$(".right").hide();
+      //paper.project.activeLayer.removeChildren();
+      //console.log(paper.project);
+      //console.log(paper.project.layers);
+      //project.clear();
+      //console.log(paper.project.layers);
       paper.project.remove();
     setTimeout(function(){showSlide("description2")},experiment.OutcomeTime);
   }})
@@ -404,19 +456,21 @@ choice_screen: function() {
   $(".warning1").hide();
   $(".warningReady").hide();
  
-  var startTime = 0;
+  var startTime = (new Date()).getTime();
   var outcome = 0;
  
   showSlide("choice_screen")
-  //$(".left").show();
+  $(".left").show();
+  //$(".right").show();
   $("#left_button").show();
   $("#right_button").show();
   $("#ready").show();
   experiment.trial_num = experiment.trial_num + 1;
   $(".trial_no").html(experiment.trial_num);
-
+//This image is based on the random ordering of the images
+// created in helper script
   var this_trial = experiment.order.shift() 
-  console.log("TRIAL NUMBER");
+  console.log(this_trial == "undefined");
   console.log(experiment.trial_num);
  
 //If you have gone through every image then start next section
@@ -434,53 +488,72 @@ choice_screen: function() {
   img = this_trial[1];
   coherence = this_trial[1];
  
-  console.log("COHERENCE AND DIRECTION; TRIAL 2 LAYERS")
   console.log(coherence);
   console.log(RL);
+  console.log($("#ready").is(':visible'));
  
+//Grabbing the image to be used next
+//  ImagePath = "../images/" + experiment.stim_set + '/' + cat + "_" + img + ".jpg";
+//  $("img.StimElement").attr("src", ImagePath);
+   
+  //canvas.clearRect(0, 0, 250, 250);
+  //if(experiment.tally_c == 0) {
+  //console.log(paper.project);
+  //console.log(paper.project.layers);
+  //console.log(paper.project.activeLayer);
+  //paper.project.remove();
+  //console.log(paper.project);
+  //project.layers.remove();
   paper.install(window);
   if (experiment.trial_num != 1) {
     console.log(paper.project);
     console.log(paper.project.layers);
   }
 
-    var mouseData = [];
-    var coor = [];
 
+ 
+   //var FirstLayer = paper.project.activeLayer;
+  //}
+  //paper.project.activeLayer.removeChildren();
+ 
+  //var count = 150;
+  //var coherence = .5;
+  //var RL = 1;
+  //var speed = 5;
+  //window.onload = function RDM() {
   $(document).on('click', '#ready', function RDM() {
-    startTime = (new Date()).getTime();
   //$(document).keydown(function RDM() {
-    //console.log(onmousemove);
-    //if (experiment.trial_num !=1){console.log(mouseData[mouseData.length -1]);}
-    $("#choice_screen").mousemove( function mouse(){
-          var x = event.pageX;
-          var y = event.pageY;
-          coor = [x, y];
-          mouseData.push(coor);
-          //console.log(coor);
-    });
-    console.log(mouseData);
-    
     $("#ready").hide();
     $(".warningReady").hide();
+    console.log($("#ready").is(':visible'));
     //creates the canvas and activates the scope to start drawing
     //if (experiment.tally_c == 0) {
         var nums = [];
         for (var i = 0; i < count; i++) {
            nums.push(i);
         }
-
+        //console.log(nums);
         shuffling(nums);
-
+        //console.log(nums);
+        //console.log(nums);
  
         var First = nums.slice(0, 50);
         var Second = nums.slice(50, 100);
         var Third = nums.slice(100, 151);
+        //console.log(First);
+        //console.log(Second);
+        //console.log(Third);
+        //console.log(First);
+        //console.log(Second);
+        //console.log(Third);
         var full = [First,Second,Third];
+        //console.log(full);
         var i = 0;
         var j = 0;      
  
     paper.setup('nonMotive');
+    console.log("paper Set up!");
+    console.log(paper.setup('nonMotive'));
  
     //}
     //paper.project.clear();
@@ -501,17 +574,12 @@ choice_screen: function() {
         var center = [view.size.width*Math.random(),view.size.height*Math.random()];
         symbol.place(center);
       }
-      
-      var skips = 2;
-      var move = .5;
-      if (coherence > .5) {skips = 1; move = .5;} else { if(coherence > .2) {skips = 2; move = 1.0;} else{if(coherence > .19) {skips = 3; move=1.5;}}};
       //onFrame gets called 60 times per sec; creates the animation/motion
       view.onFrame = function(event) {
         even ++;
-        if(even%skips ===0){
+        if(even%2 ===0){
         // Loop to take each dot 1 at a time for the animation/motion
             for (var i = 0; i < full.length; i++) {
-              //shuffling(full[i]);
               for (var j = 0; j < full[i].length; j++){
                 shuffling(full[i]);
                 var current = full[i][j];
@@ -520,7 +588,7 @@ choice_screen: function() {
                     //console.log([i,j]);
                     //console.log(current);
                 if (j < (count/3)*coherence) {
-                  item.position.x += (move)*RL;
+                  item.position.x += (.5)*RL;
                 } else {
                   //var center = [view.size.width*Math.random(),view.size.height*Math.random()];
                   //console.log(center);
@@ -535,6 +603,12 @@ choice_screen: function() {
                     if (item.bounds.right < 0) {
                         item.position.x = +view.size.width;
                     }
+                    //if (item.bounds.bottom < 0) {
+                    //    item.position.y = +view.size.height;
+                    //}
+                    //if (item.bounds.top > view.size.height) {
+                    //    item.position.y = -item.bounds.height;
+                    //}
               }
             }
         }
@@ -546,28 +620,42 @@ choice_screen: function() {
     if ($("#ready").is(':visible')) {
       $(".warningReady").show();
     } else {
-      $("#choice_screen").off("mousemove");
+//  $(document).keydown(function(event) {
+//    var keyCode = event.which;
+//    if (keyCode == 90) {
+//      var keypress = "left";
+//      $(document).unbind("keydown");
+      //$("#left_button").hide();
+      //paper.project.activeLayer.opacity = 0;
+      //paper.project.clear();
+      //paper.clear();
+      //console.log(paper.project);
+      //console.log(paper.project.layers);
       paper.project.remove();
       even = 0;
-
-      //if (experiment.keypos == "1"){
+      //console.log(paper.project);
+      //console.log(paper.project.layers);
+ 
+ 
+      // If they press the first key then choice is 2 and if the cat 
+      // is less than 6 which is prob just lets say face then you got it
+      // so you get 3 cents, if not you got it wrong so no bonus
+      if (experiment.keypos == "1"){
         choice = 1;
-        if (coherence == 0) {outcome = 0} else {if (RL == 1) {outcome = 3} else {outcome = 0}};
-      //} 
+        if (RL == 1) {outcome = 3} else {outcome = 0};
+      } 
     experiment.tally_c = experiment.tally_c + outcome;
     var endTime = (new Date()).getTime();
     var data = {
       trial_num: experiment.trial_num, 
-      direction: RL,
-      coherence: coherence,
+      cat: cat,
+      img: img,
       //keypress: keypress,
       choice: choice,
       outcome: outcome,
       rt: endTime - startTime,
       tally_c: experiment.tally_c
     }
-    console.log("DATA");
-    console.log(data);
     experiment.dataPhase1.push(data)
     setTimeout(function(){showSlide("confidence_screen")},experiment.OutcomeTime);
   }});
@@ -576,32 +664,49 @@ choice_screen: function() {
     if ($("#ready").is(':visible')) {
       $(".warningReady").show();
     } else {
-
-      $("#choice_screen").off("mousemove");
+//  else if (keyCode == 77){
+//    var keypress = "right";
+//    $(document).unbind("keydown");
+    //$(".right").hide();
+      //paper.project.activeLayer.removeChildren();
+      //console.log(paper.project);
+      //console.log(paper.project.layers);
+      //project.clear();
+      console.log(paper.project.layers);
       paper.project.remove();
-
+      //console.log(paper.project);
+      //console.log(paper.project.layers);
+      //paper.project.removeChildren();
+      //paper.project.clear();
+      //paper.clear(nonMotive);
       even = 0;
-  
-    //if (experiment.keypos =="1"){
-      choice = -1;
-      if (coherence == 0) {outcome = 0} else {if (RL == -1) {outcome = 3} else {outcome = 0}};
-
+ 
+    // Just opposite of above.
+    // if they press the first key then choice is 2 and if the cat 
+    // is less than 6 which is prob just lets say face then you got it
+    // so you get 3 cents, if not you got it wrong so no bonus   
+    if (experiment.keypos =="1"){
+      choice = 2;
+      if (RL == -1) {outcome = 3} else {outcome = 0};
+    // Else 
+    } else{
+      choice = 1;
+      if (cat < 6) {outcome = 3} else {outcome = 0};
+    }
     experiment.tally_c = experiment.tally_c + outcome;
     var endTime = (new Date()).getTime();
     var data = {
       trial_num: experiment.trial_num, 
-      direction: RL,
-      coherence: coherence,
+      cat: cat,
+      img: img,
       //keypress: keypress,
       choice: choice,
       outcome: outcome,
       rt: endTime - startTime,
       tally_c: experiment.tally_c
     }
-
-    console.log("DATA");
-    console.log(data);
-    experiment.dataPhase1.push(data);
+    console.log(data)
+    experiment.dataPhase1.push(data)
     setTimeout(function(){showSlide("confidence_screen")},experiment.OutcomeTime);
   }})
 },
@@ -615,8 +720,6 @@ confidence_response: function(){
       trial_num: experiment.trial_num,
       confidence: ans,
     }
-    console.log("CONFIDENCE");
-    console.log(data);
     experiment.confPhase1.push(data)
     $("input[type='radio'][name='likert']:checked").prop('checked', false)
     experiment.choice_screen();
@@ -631,6 +734,8 @@ part2_page1: function(){
  
     if (experiment.keypos == "1")
     {
+      $("img.phase2_gif").attr("src", '../images/coopP2.gif');
+    } else {
       $("img.phase2_gif").attr("src", '../images/coopP2.gif');
     }
  
@@ -683,7 +788,7 @@ attnchk_resp3:function(){
 startPhase2: function(){
   showSlide("description4");
   experiment.trial_num = 0;
-  experiment.order = gen_order().concat(gen_order()); //Include two sets; 80 trials
+  experiment.order = gen_order();
   $("#prediction").hide();
  
  
@@ -702,38 +807,34 @@ phase2_predict: function(){
    
   var outcome = 0;
   experiment.trial_num = experiment.trial_num + 1;
-  $(".trial_no").html(experiment.trial_num + 40);
+  $(".trial_no").html(experiment.trial_num + 80);
  
   var this_trial = experiment.order.shift() 
   if (typeof this_trial == "undefined") {
     return experiment.attention_check3();
   }
  
-  //cat = this_trial[0]; // RL 
-  RL = this_trial[0];
-  //img = this_trial[1]; // coherence
-  coherence = this_trial[1];
-  //console.log(cat);
+  cat = this_trial[0]; // RL 
+  img = this_trial[1]; // coherence
+  console.log(cat);
  
   //temp_img = new Image()
   //temp_img.src = "../images/" + experiment.stim_set + '/' + this_img[0] + "_" + this_img[1] + ".jpg";
-  console.log("TRIAL NUMBER")
   console.log(this_trial);
   var choice_p = experiment.predict_order[2].shift();
   console.log("Choice_p is below!!");
   console.log(choice_p);
   //var predict_text = "TEST";
  
-  if (choice_p == -1){
-    if (coherence == 0) {outcome = 0} else {if (RL == -1) {outcome = 7} else {outcome = -7}};
+  if (choice_p == 1){
+    if (img == 0) {outcome = 0} else {if (cat == 1) {outcome = 7}};
     //if (cat < 6) {outcome = 7} else if (cat == 6) {outcome = 0} else {outcome = -7};
     var predict_text = "Left";
-  } else if (choice_p == 1){
-    if (coherence == 0) {outcome = 0} else {if (RL == 1) {outcome = 7} else {outcome = -7}};
+  } else if (choice_p == 2){
+    if (img == 0) {outcome = 0} else if (cat == 1) {outcome = 0} else {outcome = -7};
     var predict_text = "Right";
   };
  
-  console.log("PREDICTION");
   console.log(predict_text);
  
   experiment.tally_p = experiment.tally_p + outcome;
@@ -748,11 +849,11 @@ phase2_predict: function(){
     }, rt_p);
  
  
-  tempdata = {
+  var data = {
         trial_num: experiment.trial_num, 
-        direction: RL,
-        coherence: coherence,
-        //keypress_c: [],
+        cat: cat,
+        img: img,
+        keypress_c: [],
         choice_c: [],
         outcome_c: [],
         rt_c: [],
@@ -762,77 +863,120 @@ phase2_predict: function(){
         rt_p: rt_p,
         tally_p: experiment.tally_p
       };
-      console.log("DATA")
-      console.log(tempdata);
-  setTimeout(function(){experiment.choice_screen_p2(tempdata,RL,coherence)},rt_p + 2000); 
+ 
+      console.log(data);
+  setTimeout(function(){experiment.choice_screen_p2(data,cat,img)},rt_p + 2000); 
  
 },
  
-choice_screen_p2: function(data,RL,coherence){
+choice_screen_p2: function(data,cat,img){
   $(".warning1").hide();
   $(".warningReady").hide();
   $("#prediction").hide();
-  console.log(data);
-  var data = data;
-  console.log(data);
  
-  var startTime = 0;
+  var startTime = (new Date()).getTime();
   var outcome = 0;
  
   showSlide("choice_screen_p2")
+  //$(".right").show();
   $("#left_button_p2").show();
   $("#right_button_p2").show();
   $("#ready_p2").show();
-
-  console.log(data.trial_num)
-  var coor = [];
-  var mouseData = [];
-
+  //$(".trial_no").html(experiment.trial_num);
+//This image is based on the random ordering of the images
+// created in helper script
+  //var this_trial = experiment.order.shift() 
+   //console.log(this_img);
+ 
+//If you have gone through every image then start next section
+  //if (typeof this_trial == "undefined") {
+    //return experiment.part2_page1();
+  //}
+ 
+//First number in the array tells you what category they are in F or S
+  // For new version it will be direction
+   //= this_trial[0];
+  RL = cat; //this_trial[0];
+//Second number tells you what image number in that category
+  //For new version this will be coherence
+  //img = this_trial[1];
+  coherence = img;//this_trial[1];
+ 
+  console.log(coherence);
+  console.log(RL);
+  //console.log($("#ready").is(':visible'));
+ 
+//Grabbing the image to be used next
+//  ImagePath = "../images/" + experiment.stim_set + '/' + cat + "_" + img + ".jpg";
+//  $("img.StimElement").attr("src", ImagePath);
+   
+  //canvas.clearRect(0, 0, 250, 250);
+  //if(experiment.tally_c == 0) {
+  //console.log(paper.project);
+  //console.log(paper.project.layers);
+  //console.log(paper.project.activeLayer);
+  //paper.project.remove();
+  //console.log(paper.project);
+  //project.layers.remove();
+  //var isFirst = 0;
   //paper.install(window);
-  if (data.trial_num != 1) {
-    console.log(paper.project.layers);
-  };
-
-
-
-  $(document).on('click', '#ready_p2', function RDM() {
-  //$(document).keydown(function RDM() {
-    startTime = (new Date()).getTime();
-
-      data = tempdata;
+  //  if (isFirst == 0) {
+  //     paper = new paper.PaperScope(); }
+  //console.log(paper.project);
+      console.log("DATA BEFORE");
       console.log(data);
-      coherence = tempdata.coherence;
-      RL = tempdata.direction;
 
-    $("#choice_screen_p2").mousemove( function mouse(){
-          var x = event.pageX;
-          var y = event.pageY;
-          coor = [x, y];
-          mouseData.push(coor);
-          //console.log(coor);
-    });
-    console.log(mouseData);    
 
+  //console.log(paper.project.layers);//}
+  //isFirst++;
+  //console.log(paper.project.layers);
+ 
+   //var FirstLayer = paper.project.activeLayer;
+  //}
+  //paper.project.activeLayer.removeChildren();
+ 
+  //var count = 150;
+  //var coherence = .5;
+  //var RL = 1;
+  //var speed = 5;
+  //window.onload = function RDM() {
+  $(document).on('click', '#ready_p2', function RDM() {
+      if (data.trial_num != 1) {
+    console.log(paper.project.layers);
+  }
+  //$(document).keydown(function RDM() {
     $("#ready_p2").hide();
     $(".warningReady").hide();
     console.log($("#ready_p2").is(':visible'));
-
+    //creates the canvas and activates the scope to start drawing
+    //if (experiment.tally_c == 0) {
+      console.log("DATA AFTER")
+      console.log(data);
         var nums = [];
         for (var i = 0; i < count; i++) {
            nums.push(i);
         }
+        //console.log(nums);
         shuffling(nums);
-
+        //console.log(nums);
+        //console.log(nums);
  
         var First = nums.slice(0, 50);
         var Second = nums.slice(50, 100);
         var Third = nums.slice(100, 151);
+        //console.log(First);
+        //console.log(Second);
+        //console.log(Third);
+        //console.log(First);
+        //console.log(Second);
+        //console.log(Third);
         var full = [First,Second,Third];
+        //console.log(full);
         var i = 0;
         var j = 0;      
      
     paper.setup('Motive');
-    //paper.project.activate('Motive');
+    paper.project.activate('Motive');
     //console.log("paper Set up MOTIVE!");
     //console.log(paper.setup('Motive'));
     //console.log("paper Set up NONMOTIVE!");
@@ -855,16 +999,10 @@ choice_screen_p2: function(data,RL,coherence){
         var center = [view.size.width*Math.random(),view.size.height*Math.random()];
         symbol.place(center);
       }
-
-      var skips = 2;
-      var move = .5;
-      if (coherence > .5) {skips = 1; move = .5;} else { if(coherence > .2) {skips = 2; move = 1.0;} else{if(coherence > .19) {skips = 3; move=1.5;}}};
       //onFrame gets called 60 times per sec; creates the animation/motion
       view.onFrame = function(event) {
-        
-
         even ++;
-        if(even%skips ===0){
+        if(even%2 ===0){
         // Loop to take each dot 1 at a time for the animation/motion
             for (var i = 0; i < full.length; i++) {
               for (var j = 0; j < full[i].length; j++){
@@ -875,9 +1013,7 @@ choice_screen_p2: function(data,RL,coherence){
                     //console.log([i,j]);
                     //console.log(current);
                 if (j < (count/3)*coherence) {
-                  //console.log(coherence);
-                  item.position.x += (move)*RL;
-                  //console.log(RL);
+                  item.position.x += (.5)*RL;
                 } else {
                   //var center = [view.size.width*Math.random(),view.size.height*Math.random()];
                   //console.log(center);
@@ -902,29 +1038,37 @@ choice_screen_p2: function(data,RL,coherence){
             }
         }
     }
-      
-  });  
-
-  console.log(data);
-
+      //paper.view.draw();
+  });  //$(".warning1").hide();
+  //$("#prediction").hide();
+  //showSlide("choice_screen_p2")
+   
+  //var startTime = (new Date()).getTime();
+  //var outcome = 0;
+  //$(".left").show();
+ // $(".right").show();
+   
+  //ImagePath = "../images/" + experiment.stim_set + '/' + cat + "_" + img + ".jpg";
+ // $("img.StimElement").attr("src", ImagePath);
+ 
+  //console.log(experiment.trial_num)
+  //console.log(cat)
   var choice = [];
   $(document).on('click', '#right_button_p2', function() {
     if ($("#ready_p2").is(':visible')) {
       $(".warningReady").show();
     } else {
-     console.log("DATA");
-     console.log(data);
-     //console.log(experiment.dataPhase2[trial_num -1])
      
-      $("#choice_screen_p2").off("mousemove");
-      //paper.view.detach('frame', Motive);
+     
+ 
       paper.project.remove();
  
       even = 0;
-        
-        var choice = 1;
-        if (coherence == 0) {outcome = 0} else {if (RL == 1) {outcome = 3} else {outcome = 0}};
-       //else {}
+ 
+      if (experiment.keypos == "1") {
+        choice = 1;
+        if (RL == 1) {outcome = 3} else {outcome = 0}
+      } //else {}
  
  
       experiment.tally_c = experiment.tally_c + outcome;
@@ -936,7 +1080,6 @@ choice_screen_p2: function(data,RL,coherence){
       data.rt_c = endTime - startTime;
       data.tally_c = experiment.tally_c;
  
-      console.log("DATA")
       console.log(data);
       experiment.dataPhase2.push(data);
  
@@ -949,13 +1092,15 @@ choice_screen_p2: function(data,RL,coherence){
       $(".warningReady").show();
     } else {
 
-      $("#choice_screen_p2").off("mousemove");
+
       paper.project.remove();
  
       even = 0;
  
-        var choice = -1;
-        if (coherence == 0) {outcome = 0} else {if (RL == -1) {outcome = 3} else {outcome = 0}};
+      if (experiment.keypos == "1") {
+        choice = 1;
+        if (RL == 1) {outcome = 3} else {outcome = 0}
+      } //else {}
  
  
       experiment.tally_c = experiment.tally_c + outcome;
@@ -967,7 +1112,6 @@ choice_screen_p2: function(data,RL,coherence){
       data.rt_c = endTime - startTime;
       data.tally_c = experiment.tally_c;
  
-      console.log("DATA")
       console.log(data);
       experiment.dataPhase2.push(data);
  

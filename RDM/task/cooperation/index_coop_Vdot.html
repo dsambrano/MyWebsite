@@ -4,7 +4,7 @@
 	<script src="https://web.stanford.edu/~ycleong/common/jquery-1.11.1.min.js"></script>
 	<script src="helper_scripts/mmturkey_new.js"></script>
 	<script src="helper_scripts/jstat.min.js"></script>
-	<script type="text/javascript" src="helper_scripts/paper.js"></script>
+	<script type="text/javascript" src="helper_scripts/paper-full.js"></script>
 	<!--<script type="text/paperscript" src="helper_scripts/practiceRight.js" canvas="practiceRight"></script>
 	<script type="text/paperscript" src="helper_scripts/practiceLeft.js" canvas="practiceLeft"></script>-->
 	<link rel="stylesheet" href="style/style.css" />
@@ -56,7 +56,7 @@
 
 	<div class="slide" id="descriptionLeft">
 		<p id='logo-text'>Instructions</p>
-		<p class="block-text"> Thank you for accepting this HIT. In this experiment, you will see a series of moving dots on the screen. These images are created in such a way that all dots will be moving, but some dots will be moving in a consistent direction. Some images will have a these dots moving to the "Left" while other images will have a these dots moving to the "Right". <br><br>For the example below, the image has a group of dots moving to the "Left". <span style="font-style: italic;">Note that the number of dots moving in a consistent direction is not always the same</span>. Please click continue to see an example of dots moving to the Right. 
+		<p class="block-text"> Thank you for accepting this HIT. In this experiment, you will see a series of moving dots on the screen. These images are created in such a way that all dots will be moving, but some dots will be moving in a consistent direction. Some images will have a these dots moving to the "Left" while other images will have a these dots moving to the "Right". <br><br>For the example below, the image has a group of dots moving to the "Left". <span style="font-style: italic;">Note that the proportion of dots moving in a consistent direction is not always the same, so the task can be made easier or harder</span>. Please click continue to see an example of dots moving to the Right. 
 
 			<div class = "choice_pos">
 
@@ -71,7 +71,7 @@
 	 </div>
 <div class="slide" id="descriptionRight">
 		<p id='logo-text'>Instructions</p>
-		<p class="block-text"> For this example, the image has a group of dots moving to the "Right". <span style="font-style: italic;"> Again please note that the number of dots moving in a consistent direction is not always the same</span>. Please click continue to practice once for yourself. 
+		<p class="block-text"> For this example, the image has a group of dots moving to the "Right". Please click continue to practice once for yourself. 
 
 			<div class = "choice_pos">
 
@@ -182,7 +182,7 @@
 	<div class="slide" id="description3">
 		<p id='logo-text'>Instructions</p>
 		<p class="block-text">
-		<center>	You are ready to start! <br><br> There are a total of 160 images of dots randomly moving on the screen, and there will be a break with additional instructions after 80 images. <br><br> Press G and we will begin. Good luck!</center></p>
+		<center>	You are ready to start! <br><br> There are a total of 120 images of dots randomly moving on the screen, and there will be a break with additional instructions after 80 images. <br><br> Press G and we will begin. Good luck!</center></p>
 		</div>
 
 		<!-- Phase 2 Start Page -->
@@ -216,7 +216,7 @@
 
 	<!--Confidence Screen --> 
 	<div class="slide" id="confidence_screen">
-		<p id= "progress-bar" style="font-size:14pt">Image <span class = "trial_no">{}</span> of 160</p>
+		<p id= "progress-bar" style="font-size:14pt">Image <span class = "trial_no">{}</span> of 120</p>
 		<p id='logo-text'>How confident were you?</p>
 		<center>
 			<div class="wrap">
@@ -279,10 +279,14 @@
 			If your partner's bet is wrong, both of you <strong>lose 7 cents</strong>. 
 			<br>
 			<br>
-			After she/he places her/his bet, the image will be shown and you will make your classification. As before, you will receive a bonus of <strong> 3 cents </strong> for each correct classification. 
+			After she/he places her/his bet, the image will be shown, and you will make your classification. As before, you will receive a bonus of <strong> 3 cents </strong> for each correct classification. 
 			<br>
 			<br>
 			In other words, if your partner makes a correct bet and you make a correct classification, you will earn 7 + 3 = <strong> 10 cents </strong> for that image.
+			<br>
+			<br>
+
+			Note that you earn the most money by classifying the images as acturately as possible. 
 			<br>
 			<br>
 
@@ -404,7 +408,7 @@
 
 	<!--Confidence Screen P2 --> 
 	<div class="slide" id="confidence_screen_p2">
-		<p id = "progress-bar" style="font-size:14pt">Image <span class = "trial_no">{}</span> of 160</p>
+		<p id = "progress-bar" style="font-size:14pt">Image <span class = "trial_no">{}</span> of 120</p>
 		<p id='logo-text'>How confident were you?</p>
 		<center>
 			<div class="wrap">
