@@ -350,6 +350,7 @@ span.mainResearch {
   
 div.supplement {
     width: inherit;
+    min-width: 730px;
     margin-top: 40px;
     /*font-family: 'Amiko', serif;*/
     line-height: 1.3;
