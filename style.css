@@ -47,14 +47,15 @@ h1 h2 h3{
 }
 
 #container {
-    width: 80%;
+    width: 75%;
     height: 100%;
     margin: auto auto;
+    min-width: 730px
 }
 
 #body {
     width: 1000px;
-    margin: auto
+    margin: auto;
 }
 
 
@@ -90,7 +91,7 @@ h1 h2 h3{
 
 #base {
     width: 100%;
-    min-width: 730px;
+    min-width: 800px;
     height: 100px;
     margin-top: 80px;
    /* margin-left: 50px;
@@ -350,7 +351,7 @@ span.mainResearch {
   
 div.supplement {
     width: inherit;
-    min-width: 730px;
+    min-width: 720px;
     margin-top: 40px;
     /*font-family: 'Amiko', serif;*/
     line-height: 1.3;
