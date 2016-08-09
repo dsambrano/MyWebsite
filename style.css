@@ -10,7 +10,6 @@ html {
 /* Used */
 h1 h2 h3{
     font-family: Raleway;
-    font-size: 180%;
     color: #5900b3;
  }
 
@@ -19,7 +18,6 @@ h1 h2 h3{
     margin-left: 0px;
     padding-left: 0px; 
     padding-bottom: -10px;
-    font-size: 75%;
 }
   
 .section {
@@ -215,17 +213,28 @@ header h1 {
     background-size: contain;
     background-color: #eee;
 }*/
-  
+
+nav h2 {
+    display: inline-block;
+    font-weight: 400;
+}
   
   
 nav {
     /*padding-top: 282px;
     margin-bottom: 100px;*/
     width: 100%;
-    font-size: 2.25em;
     margin: auto auto;
     padding-left: 0;
+    padding-left: 0px;
+    margin-bottom: -30px;
 }
+
+nav#front  {
+    font-size: 2rem;
+    min-width: 1000px;
+}
+
 
 nav h1 {
     margin-top: 5%;
@@ -302,7 +311,7 @@ td a:hover, a:focus, a:active {
   
 div.mainA{
     min-width: 720px;
-    height: inherit;
+    /*height: inherit;*/
     margin-top: -10px;     
     /*margin-left: 40px;
     margin-top: -30px*/
@@ -359,7 +368,6 @@ div.supplement {
 
 h1.research {
     font-family: Raleway;
-    font-size: 180%;
     margin-bottom: -10px;
     color: #5900b3;
   
@@ -414,7 +422,6 @@ h1.research {
   
 h1.PubSection, h2.PubSection {
     font-family: Raleway;
-    font-size: 180%;
     color: #5900b3; 
 }
 
@@ -457,12 +464,12 @@ h1.PubSection, h2.PubSection {
 }
 
 span.mainAbout {
-    min-width: 730px;
+    min-width: 720px;
+    height: inherit;
     width: 80%;
     font-family: 'Amiko', sans-serif;
     line-height: 1.3;
-    background-color: #000000;
-    padding-top: -40px;
+    display: inline-block;
 }
 
 span.about_photo {
@@ -492,7 +499,8 @@ span.about_photo {
 .resourceBlock {
     display: block;
     width: 100%;
-    min-width: 730px;
+    min-width: 720px;
+    min-width: 720px;
    /* height: 325px;
     margin-top: 30px;
     background-color: #b3b3b3;
@@ -503,10 +511,10 @@ span.about_photo {
 .Demos {
     background-color: #b3b3b3; 
     box-shadow: 5px 5px 10px #888888;
-    height: 120%;
 }
 
 .Demos .resourcetext {
+    margin-right: 20px;
     margin-left: 20px;
     margin-bottom: 0px;
     padding-bottom: 1px; 
@@ -519,7 +527,6 @@ span.about_photo {
 
 .resourceBlock h1 {
 	font-family: Raleway;
-    font-size: 180%;
     color: #5900b3;
 }
 
@@ -546,7 +553,6 @@ span.about_photo {
 
 .ContactMe h1{
 	font-family: Raleway;
-    font-size: 180%;
     color: #5900b3;
     margin-bottom: 0px;
 }
