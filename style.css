@@ -48,7 +48,7 @@ h1 h2 h3{
     width: 75%;
     height: 100%;
     margin: auto auto;
-    min-width: 730px
+    /*min-width: 730px;*/
 }
 
 #body {
@@ -80,7 +80,6 @@ h1 h2 h3{
 
 #contrast_A {
     width: 100%;
-    min-width: 720px;
     margin: auto auto;
    /* margin-left: 50px;
     margin-right: 100px;*/
@@ -120,7 +119,7 @@ body {
     background-color: #eee;
     /*background: #fff url(brain6.png) no-repeat center center; 
     background-size: cover;*/
-    min-width: 800px;
+    /*min-width: 800px;*/
     margin: auto; 
     padding-top: 0px;
     height:100%;
@@ -310,7 +309,7 @@ td a:hover, a:focus, a:active {
 
   
 div.mainA{
-    min-width: 720px;
+    /*min-width: 720px;*/
     /*height: inherit;*/
     margin-top: -10px;     
     /*margin-left: 40px;
@@ -360,7 +359,6 @@ span.mainResearch {
   
 div.supplement {
     width: inherit;
-    min-width: 720px;
     margin-top: 40px;
     /*font-family: 'Amiko', serif;*/
     line-height: 1.3;
@@ -499,8 +497,8 @@ span.about_photo {
 .resourceBlock {
     display: block;
     width: 100%;
-    min-width: 720px;
-    min-width: 720px;
+    /*min-width: 720px;
+    min-width: 720px;*/
    /* height: 325px;
     margin-top: 30px;
     background-color: #b3b3b3;
@@ -595,4 +593,99 @@ nav li a:hover {
     font-weight: regular;
     }
 
+
+#menu-icon {
+
+	display: hidden;
+	width: 40px;
+	height: 40px;
+	background: #b3b3b3 url(images/menu-icon.png) center;
+    border-radius: 4px 4px 4px 4px;
+
+}
+
+a:hover#menu-icon {
+
+	background-color: #b3b3b3;
+	
+
+}
+
+/*MEDIA QUERY*/
+@media only screen and (max-width : 800px) {
+
+	
+    #container {
+        width: 90%;
+        min-width: 496px;
+	}
+    
+    #contrast_A {
+        width: 100%;
+    }
+    
+    #base {
+        width: 100%;
+        min-width: 496px;
+    }
+
+	nav {
+        width: inherit;
+    }
+    
+    #menu-icon {
+
+		display:inline-block;
+        right: 0px;
+    }
+    
+    div.mainA {
+        margin-top: 25px;
+        width: 100%;
+    }
+    
+    div.supplement {
+    width: 100%;
+    margin-top: 40px;
+    /*font-family: 'Amiko', serif;*/
+    line-height: 1.3;
+}
+    
+    /*.menu-side-container{
+        align: right;
+    }*/
+
+	nav ul, nav:active ul { 
+        display: none;
+        position:absolute;
+		padding: 0px;
+		border: 5px solid #444;
+		width: 25%;
+        min-width: 140px;
+        right: 5%;
+        margin-right: 5%;
+		border-radius: 4px 4px 4px 4px;
+        margin-bottom: 10px;
+        margin-top: -10px;
+        z-index: 100;
+        background-color: #b3b3b3;
+
+	}
+
+	nav li {
+
+		text-align: center;
+		padding: 0px 0px 0px 0px;
+		margin: 0px 0px 0px 0px;
+        display: block;
+
+	}
+
+	nav:hover ul {
+
+		display: block;
+        right: 0px;
+        margin-bottom: 10px;
+
+	}
 </style>
