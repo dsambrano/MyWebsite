@@ -788,6 +788,10 @@ a:hover#menu-icon {
         
     }
     
+    nav#front  {
+    font-size: 1.5rem;
+}
+    
     nav td {
         display: block;
     }
