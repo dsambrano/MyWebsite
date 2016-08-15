@@ -337,6 +337,7 @@ span.mainResearch {
     line-height: 1.3;
     display: inline-block;
     position: relative;
+    border-radius: 4px 4px 4px 4px;
 }
 
 .research_main {
@@ -625,6 +626,7 @@ a:hover#menu-icon {
     div.mainA {
         margin-top: 25px;
         width: 100%;
+        border-radius: 4px 4px 4px 4px;
     }
     
     div.supplement {
@@ -729,7 +731,7 @@ a:hover#menu-icon {
         display: none;
         position:absolute;
 		padding: 0px;
-		border: 5px solid #444;
+		/*border: 5px solid #6e6e6e;*/
 		width: 25%;
         min-width: 140px;
         right: 5%;
@@ -739,6 +741,7 @@ a:hover#menu-icon {
         margin-top: -10px;
         z-index: 100;
         background-color: #b3b3b3;
+        box-shadow: 5px 5px 25px #888888;
 
 	}
 
@@ -748,7 +751,6 @@ a:hover#menu-icon {
 		padding: 0px 0px 0px 0px;
 		margin: 0px 0px 0px 0px;
         display: block;
-
 	}
 
 	nav:hover ul {
@@ -772,6 +774,7 @@ a:hover#menu-icon {
     #photo img {
         display: block;
         margin: auto;
+        border-radius: 4px 4px 4px 4px;
     }
     
     #figure img, #figure #cite {
@@ -779,7 +782,10 @@ a:hover#menu-icon {
         margin: auto;
         text-align: center;
     }
-
+    
+    #figure img{
+        border-radius: 4px 4px 4px 4px;
+    }
 }
 
 @media only screen and (max-width : 800px) {
@@ -790,6 +796,13 @@ a:hover#menu-icon {
         padding-bottom: 0px;
         margin-top: 0px;
         
+    }
+    
+    #footer {
+        width: 100%;
+        min-width: 150px;
+        position: absolute;
+        bottom: 0px;
     }
     
     nav#front h1 {
