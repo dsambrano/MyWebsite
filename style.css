@@ -231,6 +231,7 @@ nav {
 
 nav#front  {
     font-size: 2rem;
+    margin-bottom: 0px;
 }
 
 
@@ -783,17 +784,27 @@ a:hover#menu-icon {
 
 @media only screen and (max-width : 800px) {
 
-    #fron table {
+    #front table {
         border-spacing: 0px;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        margin-top: 0px;
         
     }
     
+    nav#front h1 {
+        margin-bottom: 0px;
+    }
+    
     nav#front  {
-    font-size: 1.5rem;
+    font-size: 1.15rem;
 }
     
     nav td {
         display: block;
+        border-spacing: 0px;
+        margin-bottom: 0px;
+        margin-top: 10px;
     }
 }
 </style>
