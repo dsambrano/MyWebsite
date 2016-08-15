@@ -766,7 +766,7 @@ a:hover#menu-icon {
     #photo, #figure {
         display: block;
         float: none;
-        margin: 0px 0px 0px 0px;
+        margin: 0px 0px 12px 0px;
     }
     
     #photo img {
