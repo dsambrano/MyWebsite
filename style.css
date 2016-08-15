@@ -197,7 +197,7 @@ header h1 {
   
 #Rpic {
     display: block;
-    width: 1000px;
+    width: 95%;
     margin: auto;
 }
 
@@ -231,13 +231,11 @@ nav {
 
 nav#front  {
     font-size: 2rem;
-    min-width: 1000px;
 }
 
 
 nav h1 {
     margin-top: 5%;
-    min-width: 815px;
     color: #5900b3;
     font-family: Raleway;
     margin-left: auto;
@@ -267,14 +265,12 @@ footer td {
 table {
     margin: auto auto;
     font-family: Roboto;
-    min-width: 815px;
-    border-spacing: 50px
+    border-spacing: 25px;
 }
   
 td {
     text-align: center;
     margin: 50px 50px;
-    margin-left: 100px;
     border-spacing: 50px;
 }
 
@@ -784,5 +780,16 @@ a:hover#menu-icon {
     }
 
 }
+
+@media only screen and (max-width : 800px) {
+
+    #fron table {
+        border-spacing: 0px;
+        
+    }
     
+    nav td {
+        display: block;
+    }
+}
 </style>
