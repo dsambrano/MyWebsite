@@ -644,7 +644,7 @@ a:hover#menu-icon {
         display: none;
         position:absolute;
 		padding: 0px;
-		border: 5px solid #444;
+		border: 5px solid #656565;
 		width: 25%;
         min-width: 140px;
         right: 12.5%;
@@ -741,7 +741,6 @@ a:hover#menu-icon {
         margin-top: -10px;
         z-index: 100;
         background-color: #b3b3b3;
-        box-shadow: 5px 5px 25px #888888;
 
 	}
 
