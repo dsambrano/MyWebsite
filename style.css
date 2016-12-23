@@ -1,7 +1,21 @@
 <style>
   
 /* basic elements */
-  
+.hangingindent {
+  padding-left: 22px ;
+  text-indent: -22px ;
+}
+
+
+p span.test{ 
+    font-weight: bold;
+    font-style: italic;
+}
+
+.cmti-10{ font-style: italic;}
+
+p.noindent { text-indent: 0em }
+
 html {
     margin: 0;
     padding: 0;
@@ -852,4 +866,9 @@ a:hover#menu-icon {
         margin-top: 10px;
     }
 }
+     
+/* start css.sty */
+
+
+    
 </style>
