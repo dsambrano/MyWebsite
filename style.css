@@ -6,6 +6,53 @@
   text-indent: -22px ;
 }
 
+.navBanner{
+    position:relative; 
+    background-color: #5900b3;
+    height: 200px;
+    width:100%;
+}
+
+.BText {
+    color: #eee;
+    width: 80%;
+    max-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+}
+
+.collaborators {
+    height: 100px;
+}
+
+.Rtext {
+    text-align: right;
+}
+
+.RFNav {
+  display: block;
+  float: right;
+    margin-left: 20px;
+}
+
+.LFNav {
+  display: block;
+  float: left;
+    margin-right: 20px;
+}
+
+
+
+.GBan{
+    background-color: #888888;
+}
+
+.PBan{
+    background-color: #5900b3;
+}
+
 
 p span.test{ 
     font-weight: bold;
@@ -866,14 +913,8 @@ a:hover#menu-icon {
         bottom: 0px;
     }
     
-    nav#front h1 {
-        margin-bottom: 0px;
-    }
-    
-    nav#front  {
-    font-size: 1.15rem;
-}
-    
+
+
     nav td {
         display: block;
         border-spacing: 0px;
