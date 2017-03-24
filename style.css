@@ -6,6 +6,10 @@
   text-indent: -22px ;
 }
 
+.FrontNav::hover {
+    border:1px solid #eee;
+}
+
 .navBanner{
     position:relative; 
     background-color: #5900b3;
