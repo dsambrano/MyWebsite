@@ -1,5 +1,14 @@
 <style>
 
+#Explore {
+    font-size: 100%;
+    background-color: rgba(136, 136, 136, 0.4);
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center; 
+    width:80px;
+}
+
 a#Explore:hover {
     background-color: color: #5900b3;
 }
@@ -243,8 +252,7 @@ h1 h2 h3{
 
 #container {
     width: 75%;
-    height: 100%;
-    margin: auto auto;
+    margin: 0 auto;
     position: relative;
     /*min-width: 730px;*/
 }
