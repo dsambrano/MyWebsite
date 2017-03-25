@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style = "min-height: 100%">
+<html style = "height: 100%">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,41 +19,110 @@
   ga('send', 'pageview');
 
 </script>
-    <!--<script type="text/javascript" src="jquery.js"></script>
-    <script type="text/javascript" src="paper.js"></script>
+    <script src="https://web.stanford.edu/~ycleong/common/jquery-1.11.1.min.js"></script>
+    <!--<script type="text/javascript" src="paper.js"></script>
     <script type="text/javascript" src="parameters.js">
     </script>
     <script type="text/javascript" src="jsversion.js"></script>-->
 </head>
-<body style = "min-height: 100%">
+<body style = "height: 100%">
 
-<div>
+<div style="min-height:100%;">
     <a href="https://www.r-project.org" onclick="window.open('https://www.rstudio.com');return true;"><img id = "Rpic" src="R.png" alt="I think, therefore I R" ><!--<header id="R" role="banner"><div class = "banner"></div></header>--></a><div class = "line"></div>
     <!--<div id = "container">--><nav class="navbar navbar-default navbar-fixed-top" id="front">
         <div class="menu-main-container"><div class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><h1> Deshawn Sambrano</h1></div>
             <!--<div id = "announcements" class = "resourceBlock Demos mainA resourcetext"><h1>Announcements</h1>
             <p>I just finished a fantastic summer as a Leadership Alliance Research Scholar at Stanford University working in Dr. Zaki's lab. I returned to California State University Fullerton, to finish my final year as an undergraduate student.</p></div></div>-->
+            <br>
             
         
     </nav><!--</div>-->
+    <a href="#FrontBarnav" id="Explore"  onMouseOver="this.style.color='#ffffff'" onMouseOut="this.style.color='#5900b3'"><div style="font-size: 100%;background-color: rgba(136, 136, 136, 0.4);padding: 10px;margin: 0 auto;text-align: center; width:80px;">Explore</div></a>
+
+    
 </div>
-    <div class="navBanner GBan"><a href="http://dsambrano.com/research"><p class="BText Rtext"><span class = "RFNav"><img src="images/Research.png" height="100" alt = "Research" class="FrontNav"></span>Check out my research interests and past projects.</p></a></div>
     
-    <div class="navBanner PBan"><a href="http://dsambrano.com/publications"><p class="BText"><span class = "LFNav"><img src="images/Publications.png" height="100" alt = "Publications" class="FrontNav"></span>Take a look at my presentations and publications.</p></a></div>
+
+    </div>
+    <div style="height:720px; margin-top:100px;">
+           <!-- testimonial one -->
+    <div class="animation-element slide-left testimonial navBanner GBan" id="FrontBarnav"><a href="http://dsambrano.com/research"><p class="BText Rtext"><span class = "RFNav"><img src="images/Research.png" height="100" alt = "Research" class="FrontNav"></span>Check out my research interests and past projects.</p></a>
+      </div>
+        <div class="animation-element slide-right testimonial navBanner PBan"><a href="http://dsambrano.com/publications"><p class="BText"><span class = "LFNav"><img src="images/Publications.png" height="100" alt = "Publications" class="FrontNav"></span>Take a look at my presentations and publications.</p></a>
+      </div>
+        <div class="animation-element slide-left testimonial navBanner GBan"><a href="http://dsambrano.com/aboutme"><p class="BText Rtext"><span class = "RFNav"><img src="images/DHAboutMe.png" height="100" alt = "AboutMe" class="FrontNav"></span>Learn more about me and how I spend my spare time.</p></a>
+      </div>
+        <div class="animation-element slide-right testimonial navBanner PBan"><a href="http://dsambrano.com/resources"><p class="BText"><span class = "LFNav"><img src="images/Resources.png" height="100" alt = "Resources" class="FrontNav" ></span>Find my coding demonstrations and some handy coding tutorials.</p></a>
+      </div>
+        </div>
     
-    <div class="navBanner GBan"><a href="http://dsambrano.com/aboutme"><p class="BText Rtext"><span class = "RFNav"><img src="images/DHAboutMe.png" height="100" alt = "AboutMe" class="FrontNav"></span>Learn more about me and how I spend my spare time.</p></a></div>
+<!--
+    <div class="navBanner GBan Lbox box"><a href="http://dsambrano.com/research"><p class="BText Rtext"><span class = "RFNav"><img src="images/Research.png" height="100" alt = "Research" class="FrontNav"></span>Check out my research interests and past projects.</p></a></div>
     
-    <div class="navBanner PBan"> <a href="http://dsambrano.com/resources"><p class="BText"><span class = "LFNav"><img src="images/Resources.png" height="100" alt = "Resources" class="FrontNav"></span>Find my coding demonstrations and some handy coding tutorials.</p></a></div>
+    <div class="navBanner PBan Rbox box"><a href="http://dsambrano.com/publications"><p class="BText"><span class = "LFNav"><img src="images/Publications.png" height="100" alt = "Publications" class="FrontNav"></span>Take a look at my presentations and publications.</p></a></div>
+    
+    <div class="navBanner GBan Lbox box"><a href="http://dsambrano.com/aboutme"><p class="BText Rtext"><span class = "RFNav"><img src="images/DHAboutMe.png" height="100" alt = "AboutMe" class="FrontNav"></span>Learn more about me and how I spend my spare time.</p></a></div>
+    
+    <div class="navBanner PBan Rbox box"> <a href="http://dsambrano.com/resources"><p class="BText"><span class = "LFNav"><img src="images/Resources.png" height="100" alt = "Resources" class="FrontNav" ></span>Find my coding demonstrations and some handy coding tutorials.</p></a></div>
+-->
+    
     
     <div id="container"><div class="announcements sectionF">
         <h2>News and Announcements!</h2>
-        </div><ul> 
+        </div>
+        <ul> 
         <li><p>I was admitted to New York University's PhD program in psychology to work in <a href = "http://www.psych.nyu.edu/phelpslab/" target="_blank">Dr. Liz Phelps'</a> lab, and I will be starting there this fall! [March 2017]</p></li>
         <li><p>My poster was accepted for the 2017 Social and Affective Neuroscience Society (<a href = "http://www.socialaffectiveneuro.org/index.html" target="_blank">SANS</a>) 2017 conference at UCLA! [January 2017]</p></li>
+        </ul>
         </div>
             <div id="footer"><footer class="fbase" id = "base"> 
                 <div id = "base_text"><p><table id="base-menu" class="nav-menu"><tr><td><a class = "menu" href="mailto:dsambrano@nyu.edu">Contact Me</a></td><td><a class = "menu" href = "DSambrano_CV.pdf">CV</a></td><td><a href="https://github.com/dsambrano">Github</a></td></tr></table>
                     <p>Created by Deshawn Sambrano. Layout last updated March 2017.</p></div></footer></div>
     
 </body>
+    <script>
+
+        
+  $(document).ready(function(){
+	$('a[href^="#"]').on('click',function (e) {
+	    e.preventDefault();
+
+	    var target = this.hash;
+	    var $target = $(target);
+
+	    $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	    }, 1200, 'swing', function () {
+	        window.location.hash = target;
+	    });
+	});
+});
+        
+var $animation_elements = $('.animation-element');
+var $window = $(window);
+
+function check_if_in_view() {
+  var window_height = $window.height();
+  var window_top_position = $window.scrollTop();
+  var window_bottom_position = (window_top_position + window_height);
+ 
+  $.each($animation_elements, function() {
+    var $element = $(this);
+    var element_height = $element.outerHeight();
+    var element_top_position = $element.offset().top;
+    var element_bottom_position = (element_top_position + element_height);
+ 
+    //check to see if this current container is within viewport
+    if ((element_bottom_position >= window_top_position) &&
+        (element_top_position <= window_bottom_position)) {
+      $element.addClass('in-view');
+    } else {
+      $element.removeClass('in-view');
+    }
+  });
+}
+
+$window.on('scroll resize', check_if_in_view);
+$window.trigger('scroll');
+</script>
 </html>
