@@ -150,6 +150,8 @@ a#Explore:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -65%);
+    vertical-align: middle;
+  justify-content: center;
 }
 
 .collaborators {
