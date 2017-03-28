@@ -127,8 +127,8 @@ a#Explore:hover {
   
 /* basic elements */
 .hangingindent {
-  padding-left: 22px ;
-  text-indent: -22px ;
+  padding-left: 60px ;
+  text-indent: -60px ;
 }
 
 .FrontNav::hover {
