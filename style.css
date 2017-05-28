@@ -865,6 +865,7 @@ span.cmti-10 > span {
 
 .btn, #goog-wm-sb {
     display: inline-block;
+    margin-top: 0px;
     margin-bottom: 0.25em;
     margin-right: 1em;
     padding: 0.5em .75em;
@@ -884,7 +885,7 @@ span.cmti-10 > span {
 }
 
 
-.pdf:hover, #goog-wm-sb:hover {
+.PurpleButton:hover, #goog-wm-sb:hover {
     background-color: #bf83fb; /*#bf83fb #8c1aff*/
 /*    background-color: #333;*/
 }
@@ -896,32 +897,32 @@ span.cmti-10 > span {
 .btn .icon + .hidden, #goog-wm-sb .icon + .hidden {
 }
 
-.pdf {
+.PurpleButton {
     background-color: #5900b3;    
     border: 1px solid #bdc1c4 !important;
 }
 
-.link {
+.BlackButton {
     background-color: #000000;
     border: 1px solid #bdc1c4 !important;
 }
 
 
 
-.link:hover {
+.BlackButton:hover {
     color: #000!important;
     border-color: #7a8288;
     background-color: #ccc;
 /*    background-color: #333;*/
 }
 
-.slides {
+.WhiteButton {
     color: #000000 !important;
     border: 1px solid #bdc1c4 !important;
     background-color: #fff;
 }
 
-.slides:hover {
+.WhiteButton:hover {
     color: #fff !important;
 /*    border-color: #7a8288;*/
     background-color: #333;    

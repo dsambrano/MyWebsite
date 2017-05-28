@@ -19,12 +19,26 @@
   ga('send', 'pageview');
 
 </script>
+    <script type="text/javascript">
+function def() {
+    myFrame.document.designMode = 'on';
+}
+function clic(id) {
+    alert(id);
+}
+</script>
+    <script type="text/javascript">
+function pdf(div)
+{close_div=div
+document.getElementById(div).innerHTML="<div style='position: absolute; left: 100px; top: 70px; right: 100px; bottom: 100px; border: 1px solid black'><div style='position: relative; float: right; cursor: pointer; top: 5px;z-index:1000;background:white' onclick='document.getElementById(close_div).innerHTML=&quot;&quot;'>CLOSE&nbsp;<\/div><iframe src='Pubs_Pres/talks/DS_LANS2016.pdf' style='position: absolute; width: 600px; height: 400px' frameborder='0'><\/iframe><\/div>"
+}
+</script>
     <!--<script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="paper.js"></script>-->  
-        <base target="_blank">
+        <base target="_target">
 
 </head>
-<body>
+<body onLoad="def()">
     <div id = "container"><div id = "">
 <div class="section"><h1>Publications</h1></div>
 <div id="contrast_A"> 
@@ -66,22 +80,28 @@ class="cmti-10">in prep</span>). Emotion regulation and well-being: A
 <h1 class="PubSection">*Selected Presentations</h1>
    <h3 class="likesectionHead"><a 
  id="x1-3000"></a><span class="underline">Papers and Symposiums</span></h3>
-<!--l. 44--><p class="hangingindent" ><span 
+<!--l. 45--><p class="hangingindent" ><span 
 class="me">Sambrano, D.</span>, Leong, Y. C., &amp; Zaki, J. (2016, July). <span 
 class="cmti-10">Motivational influences on</span>
      <span 
 class="cmti-10">perceptual judgments: How what we want changes what we see</span>. Oral
      presentation at the Leadership Alliance National Symposium. Stamford, CT.
-     <br 
+     <br><span class="PubButtons"><a class="btn PurpleButton view"
+     href="Pubs_Pres/talks/DS_LANS2016.pdf">Slides</a><a class="btn
+     WhiteButton pdf" href="Pubs_Pres/talks/DS_LANS2016.pdf"
+     download>Download</a></span><br 
 class="newline" />
-<!--l. 48--><p class="hangingindent" ><span 
+<!--l. 51--><p class="hangingindent" ><span 
 class="me">Sambrano, D. </span>&amp; Bland&oacuten-Gitlin, I. (2016, April). <span 
 class="cmti-10">The beneficial effects of sadness</span>
      <span 
 class="cmti-10">on decision-making</span>. Oral presentation at the Humanities and Social Sciences
-     Symposium. CSUF Fullerton, CA. <br 
+     Symposium. CSUF Fullerton, CA. <br><span class="PubButtons"><a class="btn
+     PurpleButton view" href="Pubs_Pres/talks/DS_HSSICC2016.pdf">Slides</a><a
+     class="btn WhiteButton pdf" href="Pubs_Pres/talks/DS_HSSICC2016.pdf"
+     download>Download</a></span><br 
 class="newline" />
-<!--l. 55--><p class="hangingindent" >Fey, T., Bland&oacuten-Gitlin, I., &amp; <span 
+<!--l. 59--><p class="hangingindent" >Fey, T., Bland&oacuten-Gitlin, I., &amp; <span 
 class="me">Sambrano, D. </span>(2016, March). <span 
 class="cmti-10">Would context</span>
      <span 
@@ -89,23 +109,30 @@ class="cmti-10">manipulation influence older adults&#8217; ability to detect dec
      presentation at the American Psychology-Law Society. Atlanta, GA.
      <br 
 class="newline" />
-<!--l. 58--><p class="hangingindent" ><span 
+
+<!--l. 63--><p class="hangingindent" ><span 
 class="me">Sambrano, D. </span>&amp; Peissig, J. J. (2015, November). <span 
 class="cmti-10">Exploring differences between</span>
      <span 
 class="cmti-10">emotional experience and perceived facial expression</span>. Oral presentation at the
      Southern California Conference for Undergraduate Research. Harvey Mudd
-     College, Claremont, CA. <br 
+     College, Claremont, CA. <br><span class="PubButtons"><a class="btn
+     PurpleButton view" href="Pubs_Pres/talks/DS_SCCUR2015.pdf">Slides</a><a
+     class="btn WhiteButton pdf" href="Pubs_Pres/talks/DS_SCCUR2015.pdf"
+     download>Download</a></span><br 
 class="newline" />
-<!--l. 61--><p class="hangingindent" ><span 
+<!--l. 67--><p class="hangingindent" ><span 
 class="me">Sambrano, D. </span>&amp; Peissig, J. J. (2015, July). <span 
-class="cmti-10">Exploring differences between posed and</span>
+class="cmti-10">Exploring differences</span>
      <span 
-class="cmti-10">genuine expressions</span>. Oral presentation at the Annual Ronald E. McNair
-     Scholar&#8217;s Symposium. Berkeley, CA. <br 
+class="cmti-10">between posed and genuine expressions</span>. Oral presentation at the
+     Annual Ronald E. McNair Scholar&#8217;s Symposium. Berkeley, CA.
+     <br><span class="PubButtons"><a class="btn PurpleButton view"
+     href="Pubs_Pres/talks/DS_BerekelyMcNair2015.pdf">Slides</a><a class="btn
+     WhiteButton pdf" href="Pubs_Pres/talks/DS_BerekelyMcNair2015.pdf"
+     download>Download</a></span><br 
 class="newline" />
-
-<!--l. 64--><p class="hangingindent" ><span 
+<!--l. 71--><p class="hangingindent" ><span 
 class="me">Sambrano, D. </span>(2015, March). <span 
 class="cmti-10">Do we select our political party based on emotional</span>
      <span 
@@ -113,7 +140,7 @@ class="cmti-10">attachment or political ideology? </span>Oral presentation at Wh
      We Should: Reason &amp; Deliberation in Public Debate Philosophy Symposium.
      CSUF Fullerton, CA.<br 
 class="newline" />
-<!--l. 67--><p class="hangingindent" >Garcia, M., Medina, N., &amp; <span 
+<!--l. 75--><p class="hangingindent" >Garcia, M., Medina, N., &amp; <span 
 class="me">Sambrano, D. </span>(2014, March). <span 
 class="cmti-10">Reinventing a</span>
      <span 
@@ -122,104 +149,132 @@ class="cmti-10">summer research program for students of color: An undergraduate<
 class="cmti-10">and graduate student partnership</span>. Oral presentation at the American
      Association of Hispanics in Higher Education Conference, Costa Mesa,
      CA.
-<!--l. 70--><p class="hangingindent" >
+<!--l. 79--><p class="hangingindent" >
    <h3 class="likesectionHead"><a 
  id="x1-4000"></a><span class="underline">Posters</span></h3>
-<!--l. 73--><p class="hangingindent" ><span 
+<!--l. 82--><p class="hangingindent" ><span 
 class="me">Sambrano, D.</span>, Leong, Y. C., &amp; Zaki, J. (2017, March). <span 
 class="cmti-10">Motivational influences on</span>
      <span 
 class="cmti-10">perceptual judgments: How what we want changes what we see</span>. Poster
      presented at the Social and Affective Neuroscience Society Conference. Los
-     Angeles, CA. <br 
+     Angeles, CA. <br><span class="PubButtons"><a class="btn PurpleButton
+     view" href="Pubs_Pres/posters/DS_SANS2017.pdf">Poster</a><a class="btn
+     WhiteButton pdf" href="Pubs_Pres/posters/DS_SANS2017.pdf"
+     download>Download</a></span><br 
 class="newline" />
-<!--l. 80--><p class="hangingindent" ><span 
+<!--l. 89--><p class="hangingindent" ><span 
 class="me">Sambrano, D.</span>, Bland&oacuten-Gitlin, I., &amp; Masip, J. (2016, October). <span 
-class="cmti-10">The beneficial</span>
+class="cmti-10">The beneficial effects</span>
      <span 
-class="cmti-10">effects of sadness on decision-making</span>. Poster presentation at the Natural
-     Sciences and Mathematics Symposium. CSUF Fullerton, CA. <br 
+class="cmti-10">of sadness on decision-making</span>. Poster presented at the Society for Advancing
+     Chicanos/Hispanics &amp; Native Americans in Science Conference. Long Beach,
+     CA. <br><span class="PubButtons"><a class="btn PurpleButton view"
+     href="Pubs_Pres/posters/DS_SACNAS2016.pdf">Poster</a><a class="btn
+     WhiteButton pdf" href="Pubs_Pres/posters/DS_SACNAS2016.pdf"
+     download>Download</a></span><br 
 class="newline" />
-<!--l. 83--><p class="hangingindent" ><span 
-class="me">Sambrano, D.</span>, Bland&oacuten-Gitlin, I., &amp; Masip, J. (2016, October). <span 
-class="cmti-10">The beneficial</span>
-     <span 
-class="cmti-10">effects of sadness on decision-making</span>. Poster presented at the Society for
-     Advancing Chicanos/Hispanics &amp; Native Americans in Science Conference.
-     Long Beach, CA. <br 
-class="newline" />
-<!--l. 86--><p class="hangingindent" ><span 
+
+<!--l. 92--><p class="hangingindent" ><span 
 class="me">Sambrano, D.</span>, Leong, Y. C., &amp; Zaki, J. (2016, July). <span 
 class="cmti-10">Do our desires shape what we</span>
      <span 
 class="cmti-10">see? </span>Poster presentation at Stanford&#8217;s Summer Research Early Identification
-     Symposium. Stanford, CA. <br 
+     Symposium. Stanford, CA. <br><span class="PubButtons"><a class="btn
+     PurpleButton view" href="Pubs_Pres/posters/DS_SR-EIP2016.pdf">Poster</a><a
+     class="btn WhiteButton pdf" href="Pubs_Pres/posters/DS_SR-EIP2016.pdf"
+     download>Download</a></span><br 
 class="newline" />
-<!--l. 89--><p class="hangingindent" >Park, J., Preston, K. S. J., Manapat, P. D., <span 
+<!--l. 95--><p class="hangingindent" >Park, J., Preston, K. S. J., Manapat, P. D., <span 
 class="me">Sambrano, D.</span>, &amp; Pizano, N.
      (2016, May). <span 
 class="cmti-10">Consequences of negatively worded items on the predictive</span>
      <span 
 class="cmti-10">capabilities of the NEO-PI-3 using the Nominal Response Model</span>. Poster
      presentation at the Association for Psychological Science. Chicago, Il.
-     <br 
+     <br><span class="PubButtons"><a class="btn PurpleButton view"
+     href="Pubs_Pres/posters/JP_APS2016.pdf">Poster</a><a class="btn
+     WhiteButton pdf" href="Pubs_Pres/posters/JP_APS2016.pdf"
+     download>Download</a></span><br 
 class="newline" />
-<!--l. 92--><p class="hangingindent" ><span 
+<!--l. 98--><p class="hangingindent" ><span 
 class="me">Sambrano, D.</span>, Preston, K. S. J., Park, J., Manapat, P. D., &amp; Pizano, N. (2016,
      May). <span 
 class="cmti-10">Decreasing participants&#8217; cognitive load while taking surveys under IRT</span>.
      Poster presentation at the Western Psychology Association Conference. Long
-     Beach, CA. <br 
+     Beach, CA. <br><span class="PubButtons"><a class="btn PurpleButton view"
+     href="Pubs_Pres/posters/DS_WPA2016_IRT.pdf">Poster</a><a class="btn
+     WhiteButton pdf" href="Pubs_Pres/posters/DS_WPA2016_IRT.pdf"
+     download>Download</a></span><br 
 class="newline" />
-<!--l. 95--><p class="hangingindent" ><span 
+<!--l. 101--><p class="hangingindent" ><span 
 class="me">Sambrano, D.</span>, Preston, K. S. J., Park, J., Manapat, P. D., &amp; Pizano, N. (2016,
      April). <span 
 class="cmti-10">Emotion regulation and well-being: A structural equation model</span>. Poster
      presentation at the Western Psychology Association Conference. Long Beach,
-     CA. <br 
+     CA. <br><span class="PubButtons"><a class="btn PurpleButton view"
+     href="Pubs_Pres/posters/DS_WPA2016_SEM.pdf">Poster</a><a class="btn
+     WhiteButton pdf" href="Pubs_Pres/posters/DS_WPA2016_SEM.pdf"
+     download>Download</a></span><br 
 class="newline" />
-
-<!--l. 102--><p class="hangingindent" >Park, J., Preston, K. S. J., Manapat, P. D., <span 
+<!--l. 108--><p class="hangingindent" >Park, J., Preston, K. S. J., Manapat, P. D., <span 
 class="me">Sambrano, D.</span>, &amp; Pizano, N (2016,
      April). <span 
 class="cmti-10">Identifying consequences of negatively worded items with the nominal</span>
      <span 
-class="cmti-10">response model</span>. Poster presentation at the Western Psychological Association.
-     Long Beach, CA. <br 
+class="cmti-10">response model</span>. Poster presentation at the Western Psychological
+     Association. Long Beach, CA. <br><span class="PubButtons"><a class="btn
+     PurpleButton view" href="Pubs_Pres/posters/JP_WPA2016.pdf">Poster</a><a
+     class="btn WhiteButton pdf" href="Pubs_Pres/posters/JP_WPA2016.pdf"
+     download>Download</a></span><br 
 class="newline" />
-<!--l. 117--><p class="hangingindent" >Espinoza, R. K. E., <span 
-class="me">Sambrano, D. </span>Hunter, B., &amp; Peterson, H. (2015, May).
+
+<!--l. 123--><p class="hangingindent" >Espinoza, R. K. E., <span 
+class="me">Sambrano, D. </span>Hunter, B., &amp; Peterson, H. (2015, May). <span 
+class="cmti-10">Influence</span>
      <span 
-class="cmti-10">Influence of jurors&#8217; views of mentally ill defendants and level of RWA for</span>
+class="cmti-10">of jurors&#8217; views of mentally ill defendants and level of RWA for racially diverse</span>
      <span 
-class="cmti-10">racially diverse defendants</span>. Poster presentation at the Western Psychological
-     Association Conference. Las Vegas, NV.<br 
+class="cmti-10">defendants</span>. Poster presentation at the Western Psychological Association
+     Conference. Las Vegas, NV.<br><span class="PubButtons"><a class="btn
+     PurpleButton view" href="Pubs_Pres/posters/RE_WPA2015.pdf">Poster</a><a
+     class="btn WhiteButton pdf" href="Pubs_Pres/posters/RE_WPA2015.pdf"
+     download>Download</a></span><br 
 class="newline" />
-<!--l. 120--><p class="hangingindent" >Person, D., Oganesian, K., &amp; <span 
+<!--l. 126--><p class="hangingindent" >Person, D., Oganesian, K., &amp; <span 
 class="me">Sambrano, D. </span>(2015, May). <span 
 class="cmti-10">Arts integration</span>
      <span 
 class="cmti-10">predicting creativity and motivation in elementary students</span>. Poster
      presentation at the Western Psychological Association Conference. Las Vegas,
-     NV.<br 
+     NV.<br><span class="PubButtons"><a class="btn PurpleButton view"
+     href="Pubs_Pres/posters/KO_WPA2015_Students.pdf">Poster</a><a class="btn
+     WhiteButton pdf" href="Pubs_Pres/posters/KO_WPA2015_Students.pdf"
+     download>Download</a></span><br 
 class="newline" />
-<!--l. 123--><p class="hangingindent" >Person, D., Oganesian, K., &amp; <span 
+<!--l. 129--><p class="hangingindent" >Person, D., Oganesian, K., &amp; <span 
 class="me">Sambrano, D. </span>(2015, May). <span 
 class="cmti-10">Professional</span>
      <span 
 class="cmti-10">development influencing art integration and teacher confidence</span>. Poster
      presentation at the Western Psychological Association Conference. Las Vegas,
-     NV.<br 
+     NV.<br><span class="PubButtons"><a class="btn PurpleButton view"
+     href="Pubs_Pres/posters/KO_WPA2015_Teachers.pdf">Poster</a><a class="btn
+     WhiteButton pdf" href="Pubs_Pres/posters/KO_WPA2015_Teachers.pdf"
+     download>Download</a></span><br 
 class="newline" />
-<!--l. 126--><p class="hangingindent" ><span 
+<!--l. 132--><p class="hangingindent" ><span 
 class="me">Sambrano, D.</span>, Hunter, B., &amp; Peterson, H. (2014, November). <span 
 class="cmti-10">The effects of mental</span>
      <span 
 class="cmti-10">illness attitudes and political ideology on juror decisions</span>. Poster presentation at
      the Southern California Conference for Undergraduate Research. CSUF
-     Fullerton, CA.<br 
+     Fullerton, CA.<br><span class="PubButtons"><a class="btn PurpleButton
+     view" href="Pubs_Pres/posters/DS_SCCUR2014.pdf">Poster</a><a class="btn
+     WhiteButton pdf" href="Pubs_Pres/posters/DS_SCCUR2014.pdf"
+     download>Download</a></span><br 
 class="newline" />
-<!--l. 129--><p class="hangingindent" >Person, D., Oganesian, K., &amp; <span 
+<!--l. 135--><p class="hangingindent" >Person, D., Oganesian, K., &amp; <span 
 class="me">Sambrano, D. </span>(2014, April). <span 
 class="cmti-10">The influence of</span>
      <span 
@@ -227,7 +282,7 @@ class="cmti-10">teacher development on arts integration in elementary schools</s
      presentation at the Western Psychological Association Conference. Portland,
      OR.<br 
 class="newline" />
-<!--l. 132--><p class="hangingindent" >Person, D., Cuellar, M., Barnett, C., <span 
+<!--l. 138--><p class="hangingindent" >Person, D., Cuellar, M., Barnett, C., <span 
 class="me">Sambrano, D.</span>, Fisk, R., &amp; Arauz, K. (2014,
      February). <span 
 class="cmti-10">Reinventing a summer research program: A graduate and</span>
