@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="Deshawn Sambrano" />
+
+<meta name="date" content="2017-06-20" />
+
+<title>Introduction to Coding</title>
+
+<script src="IntroToCoding_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="IntroToCoding_files/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="IntroToCoding_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="IntroToCoding_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="IntroToCoding_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="IntroToCoding_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="IntroToCoding_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="IntroToCoding_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="IntroToCoding_files/navigation-1.1/tabsets.js"></script>
+<link href="IntroToCoding_files/highlightjs-1.1/textmate.css" rel="stylesheet" />
+<script src="IntroToCoding_files/highlightjs-1.1/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Introduction to Coding</h1>
+<h3 class="subtitle"><em>An R Based Tutorial</em></h3>
+<h4 class="author"><em>Deshawn Sambrano</em></h4>
+<h4 class="date"><em>20 June 2017</em></h4>
+
+</div>
+
+
+<style>
+
+body {
+background-color: #eee;
+}
+
+
+h1,h2,h3,h4,h5 {
+  color: #5900b3;
+  font-weight: 400;
+}
+
+.author, .date {
+  color: #333333;
+}
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+  background-color: #5900b3;
+}
+
+code, pre.r {
+  background-color: #b3b3b3;
+}
+
+pre, code {
+border-radius: 5px;
+}
+
+a {
+  color: #5900b3;
+}
+
+a:hover {
+  color: #bf83fb;
+}
+div.error > pre:not(.R), div.warning > pre:not(.R) {
+  color: red;
+}
+
+img {
+  width: 4in;
+  display: block;
+  margin: auto;
+}
+</style>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>This appendix and the corresponing <a href="https://www.youtube.com">YouTube series</a> was designed to help individuals learn to code. This serves as a appendix to my <a href="https://www.youtube.com">YouTube playlist</a> on statistics, so this appendix will focus on the R statistical coding language. However, it is important to note that learning one coding language is extremely beneficial in learning new language because most languages have a similar structure with small differences in syntax, functionality, etc. Crucially, improving your skills as a coder is about understanding how to solve problems. Once you have developed that skill transferring to a new language is simple.</p>
+<p>This tutorial is desgined so a novice with no previous background in coding can follow. With that said, if you have some background in coding you might fing this overly simple so feel free to jump forward to a section which you feel you can benefit most from.</p>
+<div id="why-use-r-when-i-can-use-spss" class="section level3">
+<h3>Why use R when I can use SPSS?</h3>
+<p>Why use R? Why even learn to code? There are many reasons someone might learn to code.</p>
+</div>
+<div id="why-and-who" class="section level3">
+<h3>Why and Who?</h3>
+<p>Why did I write this tutorial? and who is the</p>
+</div>
+<div id="downloading-r-and-rstudio" class="section level3">
+<h3>Downloading R and Rstudio</h3>
+<p>The first and most important part is to download R and R studio. R is the the language and is the powerhouse behind the scences. This link <a href="https://cran.cnr.berkeley.edu">R</a> will take you directly to UC Berkeley’s CRAN respository. Your CRAN mirror (or the server where you download R from) is not that important (and gets into some technical stuff that isnt necessary for this tutorial) so I just selected the first one in the USA. If you wish to explore some of the other places that have CRAN you can explore the <a href="https://www.r-project.org">CRAN mirror site</a>. After you click on the link corresponding to your software, follow the instructions to install R on your operating system. R is not very asethtically pleasing and is not very useR friendly. Therefore once you have successfully install R, you will never open the program directly. Instead you open R through a more friendly Graphics User Interface (GUI; prounounced “Goo-ee”) called RStudio.</p>
+<p>RStudio has may advantages besides being more friendly GUI for using R. Specifically, I use RStudio to embed R code directly into APA formatted text (<a href="https://github.com/dsambrano/LaTeX/tree/master/APA_R-Sweave">Here is my template</a>). You can also create PowerPoint like presentations with embeded R code. This HTML file was even created using RStudio (<a href="http://dsambrano.com">Here is the code for this HTML file</a>). Download the corresponding version of RStudio to your operating system at this <a href="https://www.rstudio.com/products/rstudio/download2/">RStudio</a>. I reccomend you download the free desktop version. After you successfully download RStudio, I reccommend you pin it to your dock for easy access. From this point on, any time you want to use R, you will open RStudio which opens R in the background but you will always interact with RStudio directly.</p>
+</div>
+</div>
+<div id="definitions-and-the-basics" class="section level2">
+<h2>Definitions and the Basics</h2>
+<p>In this section, I will lay down the fundamental definition as well as the basic coding structure and syntax necessary to follow the modules. Many key concepts will be initially proposed here that will help you write your own code as well as understand code another person has created. It is very important that you understand these defitions, and I highly reccomend that you return to this section frequently while you are initially learn to code. Lastly, the only way to learn how to code it by coding. No matter how simple or clear it may seem to when you read through this tutorial, it is essential that you actually following along with the tutorial by writing your own code and getting your own errors and warnings and resolving them. It is also important to avoid the temptation to copy and paste the code directly into you own script. You are strongly encouraged to type the code out yourself. By writing it yourself you are more likely to interpret the code. You are also more likely to make an error. As a professional, that is a bad thing, but as a person learning to code you need to learn to diagnose and correct errors in your code. Therefore, you need to have a chance to make those errors.</p>
+<div id="rstudio-panels-script-console-environment-and-packages" class="section level3">
+<h3>RStudio Panels: Script, Console, Environment and Packages</h3>
+<p>Describe these things. Need to take a picture from blank RStudio from lab and show what it looks like, take two, one with and one without the object</p>
+</div>
+<div id="object-orientated-programming" class="section level3">
+<h3>Object-orientated Programming</h3>
+<p>R is an <em>object-oriented</em> coding language (also know as object-oriented programming, OOP). To be completely honest, understanding what object-oriented coding is, is a concept that <strong>MOST</strong> people will struggle with. You will likely not understand it right away. I tried to write this tutorial in such a way that by the end you will have a solid grasp of it; however, it will likely be hard to grasp and you might have to do a few of the modules several times to understand. Basically, OOP is a framework of coding in which a programmer (that’s you) assigns datasets, values, lists, vectors, functions, etc. into things called objects. In R an object is just a letter or word that stores information. Objects names are arbitrary and do not need to be tied to the information they are storing (although good coders will connect the name to the information so it is easier to remember later).</p>
+<p>The following list are all possible object names:</p>
+<pre><code>a
+apple
+data
+x
+Time4food
+I.dont.remember
+Supercalifragilisticexpialidocious</code></pre>
+<!-- R is case sensitive-->
+<blockquote>
+<p><span style="color: #5900b3">**<span> It is extemely important to know that R is case sensitive. That means the <code>apple</code> is different than <code>Apple</code>. This is a big source of frustration for coders new and old alike.</p>
+</blockquote>
+<p>Again, the names do no have to be meaningful (but most good coders will make them meaningful). In R, you assign things into objects an <code>&lt;-</code> also know as the assinment operator. Some coders also use the <code>=</code>. However, I recommend using this only inside of functions and use the <code>&lt;-</code> while assigning and object. More on that later.</p>
+<p>In the following chuck of code, I have assigned the number 1 into an object I have named <code>x</code>. Then I have told R to print whatever <code>x</code> is (line 2). While going through this tutorial, the dark grey boxes represent input (or code I have written) while the white boxes are the corresponding output from those lines of code (or response that R gives me). This is a rather elementary example. Since I set <code>x</code> to the number 1, I didn’t need to print it but it highlights the fact that by default R will not display an object in the console unless you tell it to.</p>
+<pre class="r"><code>x &lt;- 1
+x</code></pre>
+<pre><code>## [1] 1</code></pre>
+<blockquote>
+<p><span style="color: #5900b3">**<span>If you are following along in a script, then you will notice that the object <code>x</code> has been added to your environment.</p>
+</blockquote>
+<p>One final important thing to note about code creation is that it is read in the order that you run it. When running multiple lines of code at the same time that means</p>
+<pre class="r"><code>x &lt;- 1
+x &lt;- 5
+x</code></pre>
+<pre><code>## [1] 5</code></pre>
+<blockquote>
+<p><span style="color: #5900b3">**<span> Importantly, if you highlight code and run it out of order then the objects will also be created out of order, which can lead to disastrous consequences.</p>
+</blockquote>
+<p>As you see above, the output was 5. Initially R made a object called <code>x</code>, which was 1. However, on line 2 I assigned <code>x</code> as 5. Therefore, R overwrote what <code>x</code> used to be and recreated <code>x</code> as my newest assignment.</p>
+</div>
+<div id="functions" class="section level3">
+<h3>Functions</h3>
+<p>In general, a function is a tool that a programmer can use in order to more quickly and efficiently obtain some result. For example, a researcher might want to know what the mean is for a variable, so they would use the mean function. In R, you can tell that something is a function because it will have parentheses like so <code>mean()</code>. Importantly, there must not be a space between the name of a function and the opening parentheses. Inside of functions you include what are called arguments. For example, you would include the object name of the variable that you want to find the mean of inside the parentheses <code>mean(x)</code>. In the following line of code, I will use the concatenate function <code>c()</code> to create an object called <code>age</code>. This will represent the ages of 5 individuals, so we can get the mean age of these people.</p>
+<pre class="r"><code>age &lt;- c(19,19,20,18,18)
+mean(age)</code></pre>
+<pre><code>## [1] 18.8</code></pre>
+<p>Functions follow the stucture above where you have the names of the function. Inside the parenthese you have the arguments, or inputs, of the function. If you have multiple arguments, you will need to seperate them with commas like in the concatenate function above. Each age was seperated by a comma.</p>
+</div>
+<div id="packages" class="section level3">
+<h3>Packages</h3>
+<p>One of the beautiful things about R is that it is Open Source. Frequently you will come across a scenario in which you there isn’t a function to obtain what you want but some other noble coder has created code to solve you exact problem! Well fortunately, these other coders can create what is known as a package. There are a lot of technical pieces behind it, but packages are essentially a folder another coder has created that has a list useful functions that someone else might want to use. To install another package</p>
+<pre class="r"><code>install.packages(&quot;car&quot;)</code></pre>
+<pre class="r"><code>require(car)
+library(car)</code></pre>
+</div>
+<div id="the-help-window" class="section level3">
+<h3>The Help Window</h3>
+<!-- Function | Description -->
+<!-- ----     | ------------- -->
+<!-- `c()`    | Cell 2 -->
+<!-- Cell 3   | Cell 4 -->
+</div>
+</div>
+<div id="first-taste-of-code" class="section level2">
+<h2>First Taste of Code</h2>
+</div>
+<div id="modules" class="section level2">
+<h2>Modules</h2>
+<div id="module-xx-breaking-down-code" class="section level3">
+<h3>Module XX: Breaking down code</h3>
+</div>
+<div id="module-xx-i-got-a-warning.-what-do-i-do" class="section level3">
+<h3>Module XX: I got a warning. What do I do?</h3>
+<div class="warning">
+<pre class="r"><code>x &lt;- data.frame(rnorm(50,0,1),rnorm(50,0,1),rnorm(50,0,1))
+attach(x)
+attach(x)</code></pre>
+<pre><code>## The following objects are masked from x (pos = 3):
+## 
+##     rnorm.50..0..1., rnorm.50..0..1..1, rnorm.50..0..1..2</code></pre>
+</div>
+</div>
+<div id="module-xx-resolving-errors" class="section level3">
+<h3>Module XX: Resolving Errors</h3>
+<p>Unlike warnings, errors must be resolved in order to for your code to work.</p>
+<div class="error">
+<pre class="r"><code>a &lt;- rnorm(10,0,1)
+A</code></pre>
+<pre><code>## Error in eval(expr, envir, enclos): object &#39;A&#39; not found</code></pre>
+</div>
+</div>
+<div id="module-xx-for-loops" class="section level3">
+<h3>Module XX: For Loops</h3>
+<pre class="r"><code>library(&quot;MASS&quot;)
+#Creating a sampling distribution
+N &lt;- 10000 # Population size
+n &lt;- 25 # Sample size
+mu &lt;- 50 # Popultaion Mean
+sigma &lt;- 10 # Population Standard deviation
+x &lt;- rnorm(N, mu, sigma) # Create the population
+mdraws &lt;- matrix(0, 10000, 1) # Create an empty matrix to be filled in by the For Loop
+for(i in 1:10000){ # Starts the For Loop with i as the iterator and loops 10,000 times
+  draw1 &lt;- sample(x, size = n, replace = TRUE) # Draws a sample from the population
+  mdraws[i] &lt;- mean(draw1) # Take the mean of that sample and puts it into our empty matrix
+}
+
+hist(mdraws, breaks = 100, col=&#39;#5900b3&#39;) # Plot the samples as a histogram</code></pre>
+<p><img src="IntroToCoding_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<div id="errors-in-for-loops" class="section level4">
+<h4>Errors in For Loops</h4>
+<p>These are often the hardest errors for beginner to fix. But in this section I will give you a few simple strategies to fixing errors in For Loops really quickly.</p>
+</div>
+</div>
+<div id="module-xx-creating-functions" class="section level3">
+<h3>Module XX: Creating Functions</h3>
+</div>
+<div id="module-xx-creating-plots" class="section level3">
+<h3>Module XX: Creating Plots</h3>
+<p>Data visualization is one of the most crucial skills for statisticians to know. You must present your data in a friendly easy to understand way for presentations and publications. But more importantly, our statitical techiques are very limited and can often fail to acknowledge important patterns in our data. For example, this website shows a myriad of ways data with teh same means, standard deviation, and correlations can look wildly different. Fortuntely, R has some wonderful tools that can be used to make some excellent, asethtically pleasing plots.</p>
+<div id="basic-plots" class="section level4">
+<h4>Basic Plots</h4>
+<p>The most basic plots can be created with the <code>plot()</code> function. In the following example I will make two correlated variables and plot the scatter plot.</p>
+<pre class="r"><code>x &lt;- rnorm(20, 0, 1)
+y &lt;- rnorm(20, 0, 1)*(.8*x)
+plot(x, y)</code></pre>
+<p><img src="IntroToCoding_files/figure-html/unnamed-chunk-8-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p>Sometimes you might need to make a histogram. As you might expect, that can be done with the <code>hist()</code> function.</p>
+<pre class="r"><code>x &lt;- rnorm(1000, 0, 1)
+hist(x)</code></pre>
+<p><img src="IntroToCoding_files/figure-html/unnamed-chunk-9-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p>Although these plots were easily created, they are not very asethetically appealling, as you might have noticed. As you might expect, there are arguments, that can adjust the color, size, line type, title, axis title, etc. However, even with those adjustments you would not be using the full plotting power of R. In order to get the most out of your plots in R, you will need to install the <code>ggplot2</code> package. More on <code>ggplot2</code> in ‘Advanced Plotting.’</p>
+</div>
+<div id="advanced-plotting" class="section level4">
+<h4>Advanced Plotting</h4>
+<pre class="r"><code>library(ggplot2) # To plot data
+
+# Used for creating 90% confidence intervals (aka error bars).
+limits = aes(ymax = mean + (1.645*se), ymin=mean - (1.645*se))
+
+# For 95% CIs.
+# limits = aes(ymax = mean + (1.96*se), ymin=mean - (1.96*se))
+
+dodge = position_dodge(width=0.9)
+
+apatheme &lt;- theme_bw()+ # Creating a theme called apatheme witht the following parameters
+              theme(panel.grid.major=element_blank(), # No major grid
+                    panel.grid.minor=element_blank(), # No minor grid
+                    panel.border=element_blank(), # No border
+                    panel.background = element_rect(fill = &quot;transparent&quot;), # Make background transparent, super useful for creating presentations that have colored backgrounds
+                    axis.line=element_line(), # Adjust the axes
+                    text=element_text(family=&quot;Times&quot;), # Makes font Times New Roman
+                    legend.background = element_rect(fill = &quot;transparent&quot;, linetype=&quot;solid&quot;), # Make legend transparent
+                    legend.box.background = element_rect(fill = &quot;transparent&quot;, linetype=&quot;solid&quot;), #
+                    plot.background = element_rect(fill = &quot;transparent&quot;, colour = NA)) # Make the rest of the plot tranparent
+library(psych)
+dv &lt;- c(rnorm(50,10,1),rnorm(50,12,1))
+iv &lt;- c(rep(c(&quot;Happy&quot;,&quot;Sad&quot;),each=50))
+
+
+data &lt;- data.frame(processing=dv,emotion=iv)
+
+plotdata &lt;- describeBy(data$processing,list(data$emotion), mat=TRUE,digits=4)
+names(plotdata)[names(plotdata) == &quot;group1&quot;] &lt;- &quot;emotion&quot;
+
+dir.create(&quot;Plots&quot;, showWarnings = FALSE)
+
+p = ggplot(plotdata, aes(x = emotion, y = mean))+#, label=j.labels))+
+  #coord_cartesian(ylim=c(1,8)) +
+  #scale_y_continuous(limits=c(0,8)) +
+  geom_bar(stat=&quot;identity&quot;, position=dodge,fill=&quot;#5900b3&quot;) +
+  geom_errorbar(limits, position=dodge, width=0.25) +
+  apatheme+
+  ylab(&quot;Processing Style&quot;) +
+  xlab(&quot;Emotion Condition&quot;) +
+  #annotate(&quot;text&quot;,x=c(1,2,3),y=mean+1,label=&quot;p=0.012&quot;)
+  #geom_text(aes(label=j.labels, y=mean+(1.645*se)), vjust=-.5, show.legend = FALSE) + #Above the error bars
+##geom_text(aes(label=j.labels), parse=TRUE, hjust=0.5, vjust=-0.5, size=4)
+  #geom_text(aes(y = mean + .5), position = position_dodge(0.9), vjust = 0) +
+  theme(legend.key = element_rect(colour = NA)) + 
+  scale_fill_manual(values=c(&quot;#5900b3&quot;)) #+
+# scale_fill_grey() c(&quot;#5900b3&quot;,&quot;#444444&quot;)
+ggsave(p, filename = paste0(&quot;Plots/BarPlot.png&quot;),  bg = &quot;transparent&quot;)</code></pre>
+<div class="figure">
+<img src="Plots/BarPlot.png" />
+
+</div>
+<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
+<pre class="r"><code>summary(cars)</code></pre>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+</div>
+</div>
+</div>
+<div id="including-plots" class="section level2">
+<h2>Including Plots</h2>
+<p>You can also embed plots, for example:</p>
+<p><img src="IntroToCoding_files/figure-html/pressure-1.png" width="672" /></p>
+<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
