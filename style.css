@@ -13,7 +13,7 @@
 
 #Explore {
     font-size: 100%;
-    background-color: rgba(136, 136, 136, 0.4);
+    /* background-color: rgba(136, 136, 136, 0.4); */
     padding: 10px;
     margin: 0 auto;
     text-align: center; 
@@ -21,7 +21,7 @@
 }
 
 a#Explore:hover {
-    background-color: #5900b3;
+    /* background-color: #5900b3;*/
 }
 
 
