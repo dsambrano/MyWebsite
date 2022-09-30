@@ -1,4 +1,96 @@
 {% extends "base.html" %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/Logo.js') }}" defer></script>
+<script src="{{ url_for('static', filename='js/index.js') }}" defer></script>
+<link href="https://fonts.googleapis.com/css?family=Amiko|Raleway|Roboto:400,900" rel="stylesheet">
+{% endblock %}
 {%block title %}
-  Deshawn Sambrano's Website
+Deshawn Sambrano's Website
 {%endblock %}
+
+
+{% block content %}
+<div id="landing_page">
+  <a href="https://www.r-project.org" onclick="window.open('https://www.rstudio.com');return true;">
+    <img id = "Rpic" src="{{ url_for('static', filename='images/R.png') }}" alt="I think, therefore I R" >
+  </a>
+  <div class = "line"></div>
+  <nav class="navbar navbar-default navbar-fixed-top" id="front">
+      <div class="menu-main-container">
+        <div class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32">
+          <h1> Deshawn Sambrano</h1>
+        </div>
+      </div>
+      <br>
+  </nav>
+    <div style="font-size: 100%;background-color: rgba(136, 136, 136, 0.4);padding: 10px;margin: 0 auto;text-align: center; width:80px;">
+      <a href="#FrontBarnav" id="Explore"  onMouseOver="this.style.color='#ffffff'" onMouseOut="this.style.color='#5900b3'">
+        Explore
+      </a>
+    </div>
+</div>
+
+<div id="banners">
+  <div class="animation-element slide-left testimonial navBanner GBan" id="FrontBarnav">
+    <a href="http://dsambrano.com/research">
+      <p class="BText Rtext">
+      <span class = "RFNav">
+        <img src="{{ url_for('static', filename='images/Research.png') }}" height="100" alt = "Research" class="FrontNav">
+      </span>Check out my research interests and past projects.
+      </p>
+    </a>
+  </div>
+  <div class="animation-element slide-right testimonial navBanner PBan">
+    <a href="http://dsambrano.com/publications">
+      <p class="BText">
+      <span class = "LFNav">
+        <img src="{{ url_for('static', filename='images/Publications.png') }}" height="100" alt = "Publications" class="FrontNav">
+      </span>Take a look at my presentations and publications.
+      </p>
+    </a>
+  </div>
+  <div class="animation-element slide-left testimonial navBanner GBan">
+    <a href="http://dsambrano.com/aboutme">
+      <p class="BText Rtext">
+      <span class = "RFNav">
+        <img src="{{ url_for('static', filename='images/DHAboutMe.png') }}" height="100" alt = "AboutMe" class="FrontNav">
+      </span>Learn more about me and how I spend my spare time.
+      </p>
+    </a>
+  </div>
+  <div class="animation-element slide-right testimonial navBanner PBan">
+    <a href="http://dsambrano.com/resources">
+      <p class="BText">
+      <span class = "LFNav">
+        <img src="{{ url_for('static', filename='images/Resources.png') }}" height="100" alt = "Resources" class="FrontNav" >
+      </span>Find my coding demonstrations and some handy coding tutorials.
+      </p>
+    </a>
+  </div>
+
+        <img src="{{ url_for('static', filename='images/desktop-computer.png') }}" height="100" alt = "Resources" class="FrontNav" >
+  <!-- for future blog: <a href="https://www.flaticon.com/free-icons/writing" title="writing icons">Writing icons created by Smashicons - Flaticon</a> -->
+</div>
+
+    <div id="container">
+      <div class="announcements sectionF">
+        <h2>News and Announcements!</h2>
+      </div>
+      <ul> 
+        <!--<li><p>I graduated with <emph>Summa cum Laude</emph> honors! [May 2017]</p></li>        -->
+        <li>
+          <p>I won outstanding undergrate in psychology, outstanding MARC scholar, the Loh Seng Tsai Memorial Scholarhip, and will be the student speaker at the psychology commencement! [April 2017]</p>
+        </li>
+        <li>
+          <p>I was admitted to New York University's PhD program in psychology to work in <a href = "http://www.psych.nyu.edu/phelpslab/" target="_blank">Dr. Liz Phelps'</a> lab, and I will be starting there this fall! [March 2017]</p>
+        </li>
+        <li>
+          <p>My poster was accepted for the 2017 Social and Affective Neuroscience Society (<a href = "http://www.socialaffectiveneuro.org/index.html" target="_blank">SANS</a>) 2017 conference at UCLA! [January 2017]</p>
+        </li>
+        <li>
+          <p>The <a href = "http://www.ocregister.com/2016/10/10/csuf-psychology-student-investigates-the-effects-and-importance-of-facial-expressions/" target="_blank">OC register</a> ran an article about my McNair research. P.S. See if you can spot Crystal in the background. [October 2016]</p>
+        </li>
+      </ul>
+    </div>
+
+{% endblock %}

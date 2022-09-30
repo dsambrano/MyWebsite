@@ -1,5 +1,11 @@
 <style>
 
+.root{
+  --bg_color: #888;
+  --bg_light: #eee;
+  --primary_color: #5900b3;
+  --primary_alpha: #5900b366;
+}
 
 .random{ 
     -webkit-transition: background 300ms ease-in 2100ms; /* property duration timing-function delay */
@@ -8,8 +14,13 @@
     transition: background 300ms ease-in 2100ms;
     }
 
+#landing_page {
+  min-height: 100vh;
+}
 
-
+#banners {
+  height: 720px;
+}
 
 #Explore {
     font-size: 100%;
