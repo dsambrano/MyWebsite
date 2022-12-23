@@ -264,7 +264,7 @@ h1 h2 h3{
 }
 
 #container {
-    width: 75%;
+    width: 60%;
     margin: 0 auto;
     position: relative;
     /*min-width: 730px;*/
@@ -543,7 +543,7 @@ div.mainA{
     /*margin-left: 40px;
     margin-top: -30px*/
     background-color: #b3b3b3;
-    box-shadow: 5px 5px 10px #888888;
+    box-shadow: 5px 5px 8px #888888;
     border-radius: 9px 9px 9px 9px;
     /*border: 3px solid #5900b3;*/
 }
