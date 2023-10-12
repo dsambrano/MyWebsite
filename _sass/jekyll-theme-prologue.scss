@@ -180,7 +180,7 @@
 	}
 
     .CC {
-        background: rgba(200, 54, 54, 0.5);
+        background: rgba(0, 0, 0, 0.8);
         border-radius: 8px;
     }
 
@@ -253,7 +253,7 @@
 		&.avatar48 {
 			width: 48px;
 			height: 48px;
-			background: #f00;
+			// background: #f00;
 
 			img {
 				width: 48px;
@@ -439,6 +439,7 @@
 		text-decoration: none;
 		padding: 0.75em 2.5em 0.75em 2.5em;
 		background-color: #8ebebc;
+        background-color: #674EA7;
 		border: 0;
 		cursor: pointer;
 		@include vendor('background-image', ('linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15))', 'url("images/overlay.png")'));
@@ -446,10 +447,13 @@
 
 		&:hover {
 			background-color: #9ececc;
+            background-color: #9483C1;
+            background-color: #8571B8;
 		}
 
 		&:active {
 			background-color: #7eaeac;
+            background-color: #674EA7;
 		}
 	}
 
@@ -606,6 +610,7 @@
 
 						span::before {
 							color: #e27689;
+                            color: #674EA7;
 						}
 					}
 				}
