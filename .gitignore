@@ -1,2 +1,15 @@
 .DS_Store
 venv
+
+*venv/
+/_site
+*.gem
+.sass-cache
+Gemfile.lock
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+Gemfile.lock
+
